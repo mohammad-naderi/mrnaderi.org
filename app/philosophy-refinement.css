@@ -102,18 +102,9 @@ main:has(.philosophy-opening) .content-section {
     line-height: 1.03;
   }
 
-  body:has(.philosophy-opening) .site-header .wordmark-rule {
-    display: none;
-  }
-
+  body:has(.philosophy-opening) .site-header .wordmark-rule,
   body:has(.philosophy-opening) .site-header .wordmark-field {
-    margin-top: 16px;
-    font-size: 11px;
-    letter-spacing: 0.13em;
-  }
-
-  body:has(.philosophy-opening) .site-header .wordmark-field::after {
-    content: " · Writing";
+    display: none;
   }
 
   body:has(.philosophy-opening) .site-header nav {
@@ -158,11 +149,12 @@ main:has(.philosophy-opening) .content-section {
   main:has(.philosophy-opening) .page-intro h1 {
     font-size: clamp(58px, 5vw, 72px);
     line-height: 0.98;
+    margin-bottom: 0;
   }
 
   main:has(.philosophy-opening) .page-intro .page-deck {
     max-width: 700px;
-    margin-top: 32px;
+    margin-top: 44px;
   }
 
   main:has(.philosophy-opening) .philosophy-contents {
