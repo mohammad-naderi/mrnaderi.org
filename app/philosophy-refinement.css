@@ -63,21 +63,29 @@ main:has(.philosophy-opening) .page-intro h1 {
 
 /* Keep the essay continuous rather than treating each part as a large panel. */
 main:has(.philosophy-opening) .content-section {
-  padding-block: 46px;
+  padding-block: 24px;
 }
 
-/* On wider screens, use more of the available page width while preserving
-   the existing reading-column width and marginal section numerals. */
+/* Desktop: deliberately use more of the left side of the page. The marginal
+   numeral remains a margin marker, but the essay no longer floats in the
+   right half of a wide screen. */
 @media (min-width: 1000px) {
   main:has(.philosophy-opening) .content-section.shell,
   main:has(.philosophy-opening) .philosophy-contents.shell {
-    width: min(1180px, calc(100% - 64px));
+    width: min(1280px, calc(100% - 48px));
     max-width: none;
+    margin-left: max(24px, calc((100% - 1440px) / 2));
+    margin-right: auto;
   }
 
   main:has(.philosophy-opening) .content-section {
-    grid-template-columns: 0.36fr 1.2fr;
-    column-gap: 54px;
+    grid-template-columns: 150px minmax(0, 790px);
+    column-gap: 34px;
+    justify-content: start;
+  }
+
+  main:has(.philosophy-opening) .content-section > :first-child {
+    justify-self: start;
   }
 }
 
