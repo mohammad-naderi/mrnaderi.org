@@ -66,25 +66,54 @@ main:has(.philosophy-opening) .content-section {
   padding-block: 24px;
 }
 
-/* Desktop: deliberately use more of the left side of the page. The marginal
-   numeral remains a margin marker, but the essay no longer floats in the
-   right half of a wide screen. */
+/* Desktop editorial grid: reserve a calm left rail for site structure and
+   section markers, while the essay occupies a consistent reading field to
+   its right. The rail is intentionally unboxed: the whitespace itself is
+   the architecture. */
 @media (min-width: 1000px) {
+  body:has(.philosophy-opening) .site-header .header-inner,
+  main:has(.philosophy-opening) .page-intro.shell,
   main:has(.philosophy-opening) .content-section.shell,
   main:has(.philosophy-opening) .philosophy-contents.shell {
-    width: min(1280px, calc(100% - 48px));
+    width: min(1180px, calc(100% - 80px));
     max-width: none;
-    margin-left: max(24px, calc((100% - 1440px) / 2));
-    margin-right: auto;
+    margin-inline: auto;
   }
 
-  main:has(.philosophy-opening) .content-section {
-    grid-template-columns: 150px minmax(0, 790px);
+  body:has(.philosophy-opening) .site-header .header-inner {
+    grid-template-columns: 210px minmax(0, 790px) auto;
+    column-gap: 34px;
+  }
+
+  body:has(.philosophy-opening) .site-header nav {
+    justify-self: start;
+  }
+
+  main:has(.philosophy-opening) .page-intro {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 790px);
+    column-gap: 34px;
+  }
+
+  main:has(.philosophy-opening) .page-intro .eyebrow {
+    grid-column: 1;
+    align-self: start;
+  }
+
+  main:has(.philosophy-opening) .page-intro h1,
+  main:has(.philosophy-opening) .page-intro .page-deck {
+    grid-column: 2;
+  }
+
+  main:has(.philosophy-opening) .content-section,
+  main:has(.philosophy-opening) .philosophy-contents {
+    grid-template-columns: 210px minmax(0, 790px);
     column-gap: 34px;
     justify-content: start;
   }
 
-  main:has(.philosophy-opening) .content-section > :first-child {
+  main:has(.philosophy-opening) .content-section > :first-child,
+  main:has(.philosophy-opening) .philosophy-contents > :first-child {
     justify-self: start;
   }
 }
