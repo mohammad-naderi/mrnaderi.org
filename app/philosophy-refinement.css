@@ -61,8 +61,24 @@ main:has(.philosophy-opening) .page-intro h1 {
   color: var(--blue);
 }
 
+/* Keep the essay continuous rather than treating each part as a large panel. */
 main:has(.philosophy-opening) .content-section {
-  padding-block: 76px;
+  padding-block: 46px;
+}
+
+/* On wider screens, use more of the available page width while preserving
+   the existing reading-column width and marginal section numerals. */
+@media (min-width: 1000px) {
+  main:has(.philosophy-opening) .content-section.shell,
+  main:has(.philosophy-opening) .philosophy-contents.shell {
+    width: min(1180px, calc(100% - 64px));
+    max-width: none;
+  }
+
+  main:has(.philosophy-opening) .content-section {
+    grid-template-columns: 0.36fr 1.2fr;
+    column-gap: 54px;
+  }
 }
 
 main:has(.philosophy-opening) .prose-large h2 {
