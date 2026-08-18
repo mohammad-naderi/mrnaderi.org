@@ -155,7 +155,7 @@ main:has(.philosophy-opening) .content-section {
   main:has(.philosophy-opening) .page-intro > p:last-child {
     max-width: 700px;
     margin-top: 0;
-    padding-top: 60px;
+    padding-top: 16px;
   }
 
   main:has(.philosophy-opening) .philosophy-contents {
