@@ -61,60 +61,126 @@ main:has(.philosophy-opening) .page-intro h1 {
   color: var(--blue);
 }
 
-/* Keep the essay continuous rather than treating each part as a large panel. */
 main:has(.philosophy-opening) .content-section {
   padding-block: 24px;
 }
 
-/* Desktop editorial grid: reserve a calm left rail for site structure and
-   section markers, while the essay occupies a consistent reading field to
-   its right. The rail is intentionally unboxed: the whitespace itself is
-   the architecture. */
+/* Desktop: reproduce the approved wireframe. A real left editorial rail holds
+   the identity/navigation. The philosophy essay begins in a separate reading
+   column to its right. No box or vertical rule: whitespace supplies the split. */
 @media (min-width: 1000px) {
-  body:has(.philosophy-opening) .site-header .header-inner,
-  main:has(.philosophy-opening) .page-intro.shell,
-  main:has(.philosophy-opening) .content-section.shell,
-  main:has(.philosophy-opening) .philosophy-contents.shell {
-    width: min(1180px, calc(100% - 80px));
-    max-width: none;
-    margin-inline: auto;
+  body:has(.philosophy-opening) .site-header {
+    position: absolute;
+    top: 0;
+    left: max(40px, calc((100vw - 1440px) / 2 + 40px));
+    width: 250px;
+    border-bottom: 0;
+    z-index: 20;
   }
 
   body:has(.philosophy-opening) .site-header .header-inner {
-    grid-template-columns: 210px minmax(0, 790px) auto;
-    column-gap: 34px;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding-top: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  body:has(.philosophy-opening) .site-header .wordmark {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 210px;
+  }
+
+  body:has(.philosophy-opening) .site-header .wordmark-name {
+    max-width: 190px;
+    font-size: 30px;
+    line-height: 1.03;
+  }
+
+  body:has(.philosophy-opening) .site-header .wordmark-rule {
+    display: none;
+  }
+
+  body:has(.philosophy-opening) .site-header .wordmark-field {
+    margin-top: 16px;
+    font-size: 11px;
+    letter-spacing: 0.13em;
+  }
+
+  body:has(.philosophy-opening) .site-header .wordmark-field::after {
+    content: " · Writing";
   }
 
   body:has(.philosophy-opening) .site-header nav {
-    justify-self: start;
+    margin-top: 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  body:has(.philosophy-opening) .site-header nav a:first-child {
+    color: var(--blue);
+  }
+
+  body:has(.philosophy-opening) .site-header .subscribe-button {
+    margin-top: 44px;
+  }
+
+  main:has(.philosophy-opening) .page-intro.shell,
+  main:has(.philosophy-opening) .content-section.shell,
+  main:has(.philosophy-opening) .philosophy-contents.shell {
+    width: 760px;
+    max-width: calc(100% - 390px);
+    margin-left: max(390px, calc((100vw - 1440px) / 2 + 390px));
+    margin-right: auto;
   }
 
   main:has(.philosophy-opening) .page-intro {
-    display: grid;
-    grid-template-columns: 210px minmax(0, 790px);
-    column-gap: 34px;
+    display: block;
+    padding-top: 74px;
+    padding-bottom: 48px;
   }
 
   main:has(.philosophy-opening) .page-intro .eyebrow {
-    grid-column: 1;
-    align-self: start;
+    display: none;
   }
 
-  main:has(.philosophy-opening) .page-intro h1,
+  main:has(.philosophy-opening) .page-intro h1 {
+    font-size: clamp(58px, 5vw, 72px);
+    line-height: 0.98;
+  }
+
   main:has(.philosophy-opening) .page-intro .page-deck {
-    grid-column: 2;
+    max-width: 700px;
+    margin-top: 20px;
   }
 
-  main:has(.philosophy-opening) .content-section,
   main:has(.philosophy-opening) .philosophy-contents {
-    grid-template-columns: 210px minmax(0, 790px);
-    column-gap: 34px;
+    grid-template-columns: 130px minmax(0, 1fr);
+    column-gap: 28px;
+    padding-block: 34px 38px;
+  }
+
+  main:has(.philosophy-opening) .content-section {
+    grid-template-columns: 34px minmax(0, 1fr);
+    column-gap: 28px;
     justify-content: start;
   }
 
-  main:has(.philosophy-opening) .content-section > :first-child,
-  main:has(.philosophy-opening) .philosophy-contents > :first-child {
-    justify-self: start;
+  main:has(.philosophy-opening) .content-section.shell {
+    width: 824px;
+    max-width: calc(100% - 390px);
+    margin-left: max(326px, calc((100vw - 1440px) / 2 + 326px));
   }
 }
 
