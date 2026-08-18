@@ -8,6 +8,59 @@ main:has(.philosophy-opening) .page-intro h1 {
   font-size: clamp(52px, 5.2vw, 70px);
 }
 
+.philosophy-contents {
+  display: grid;
+  grid-template-columns: 0.48fr 1.2fr;
+  column-gap: 70px;
+  padding-block: 42px 46px;
+  border-bottom: 1px solid var(--line);
+}
+
+.philosophy-contents-label {
+  padding-top: 4px;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.philosophy-contents ol {
+  max-width: 790px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.philosophy-contents li {
+  border-bottom: 1px solid var(--line);
+}
+
+.philosophy-contents a {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding-block: 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.35;
+  transition: color 160ms ease;
+}
+
+.philosophy-contents a span {
+  color: var(--blue);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.philosophy-contents a:hover {
+  color: var(--blue);
+}
+
 main:has(.philosophy-opening) .content-section {
   padding-block: 76px;
 }
@@ -24,6 +77,23 @@ main:has(.philosophy-opening) .prose-large h2 {
 
   main:has(.philosophy-opening) .page-intro h1 {
     font-size: clamp(42px, 12vw, 52px);
+  }
+
+  .philosophy-contents {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-block: 32px 36px;
+  }
+
+  .philosophy-contents ol {
+    width: 100%;
+  }
+
+  .philosophy-contents a {
+    grid-template-columns: 38px 1fr;
+    gap: 8px;
+    padding-block: 11px;
+    font-size: 16px;
   }
 
   main:has(.philosophy-opening) .content-section {
