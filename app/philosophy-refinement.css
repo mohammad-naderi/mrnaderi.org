@@ -148,7 +148,7 @@ main:has(.philosophy-opening) .content-section {
   main:has(.philosophy-opening) .page-intro {
     display: block;
     padding-top: 74px;
-    padding-bottom: 54px;
+    padding-bottom: 60px;
   }
 
   main:has(.philosophy-opening) .page-intro .eyebrow {
