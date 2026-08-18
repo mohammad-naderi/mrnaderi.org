@@ -162,7 +162,7 @@ main:has(.philosophy-opening) .content-section {
 
   main:has(.philosophy-opening) .page-intro .page-deck {
     max-width: 700px;
-    margin-top: 20px;
+    margin-top: 32px;
   }
 
   main:has(.philosophy-opening) .philosophy-contents {
