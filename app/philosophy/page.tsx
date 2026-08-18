@@ -29,6 +29,17 @@ export default function PhilosophyPage() {
           </p>
         </section>
 
+        <nav className="philosophy-contents shell" aria-label="Philosophy page contents">
+          <p className="philosophy-contents-label">On this page</p>
+          <ol>
+            <li><a href="#part-I"><span>I</span>How Is the New Possible?</a></li>
+            <li><a href="#part-II"><span>II</span>Badiou and the Discovery of Discipline</a></li>
+            <li><a href="#part-III"><span>III</span>What Is the Theory of Discipline?</a></li>
+            <li><a href="#part-IV"><span>IV</span>Truth and the Discipline</a></li>
+            <li><a href="#part-V"><span>V</span>Why Truth?</a></li>
+          </ol>
+        </nav>
+
         <EssaySection id="part-I" title="How Is the New Possible?">
           <p>Looking back, I have come to think that one question has accompanied much of my philosophical work, long before I formulated it explicitly: <em>how is the new possible?</em> By the new I do not mean change as such. Things change continuously. Nor do I mean innovation, difference, or the rearrangement of possibilities already available within a given situation. My concern is with what I call <em>radical novelty</em>: the coming into existence of a consistency that cannot be derived from the existing resources of the situation in which it emerges. In what follows, when I speak simply of <em>novelty</em>, I mean radical novelty in this sense.</p>
           <p>I did not begin my philosophical work by formulating the problem in these terms. But retrospectively it helps me understand some of my earliest philosophical attractions. It was part of what drew me, in very different ways, to Hegel and Marx, to the later Kant, to Heidegger, and to Islamic mysticism. What interested me in these otherwise profoundly different forms of thought was the refusal to allow the given to determine completely the limits of what is possible. The same concern informed my interest in a conception of the subject whose fate remains open: a subject that is conditioned, divided and confronted by obstacles, but whose possibilities cannot be decided in advance by those conditions.</p>
