@@ -255,6 +255,7 @@ p { margin: 0; }
 .book-cover.ink { background: #242a29; }
 .book-cover.blue { background: var(--blue); }
 .book-cover.green { background: var(--green); }
+.book-cover.red { background: #9f1f26; }
 .book-cover span {
   font-size: 7px;
   font-weight: 700;

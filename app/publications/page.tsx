@@ -99,6 +99,13 @@ export default function PublicationsPage() {
               href="https://www.routledge.com/Philosophy-After-Lacan-Politics-Science-and-Art/Taheri-Vanderwees-Naderi/p/book/9781032546452"
             />
             <BookSpine
+              tone="red"
+              status="GLAC Edições · 2026 · Co-author"
+              title="Atlas de Política Experimental"
+              description="A substantially revised and expanded Portuguese-language edition of Atlas of Experimental Politics, collectively written by the Subconjunto de Prática Teórica. My contribution, ‘The Discipline of Politics,’ was rewritten for this volume."
+              href="https://www.glacedicoes.com/product-page/atlas-de-politica-experimental-subconjunto-de-pratica-teorica"
+            />
+            <BookSpine
               tone="green"
               status="Bloomsbury Academic · Forthcoming 2027"
               title="Badiou and Disciplinary Truths"

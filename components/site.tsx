@@ -84,7 +84,7 @@ export function BookSpine({
   subtitle?: string;
   status: string;
   description: string;
-  tone: "ink" | "blue" | "green";
+  tone: "ink" | "blue" | "green" | "red";
   href?: string;
 }) {
   const book = (
