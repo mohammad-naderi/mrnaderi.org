@@ -51,7 +51,7 @@ export default function Home() {
                   alt="Portrait of Mohammad Reza Naderi against cedar foliage"
                   width={1152}
                   height={1536}
-                  sizes="(max-width: 760px) 100px, 112px"
+                  sizes="(max-width: 760px) 150px, 180px"
                   priority
                   unoptimized
                 />

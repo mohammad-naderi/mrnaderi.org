@@ -14,7 +14,7 @@
 
 .home-introduction {
   display: grid;
-  grid-template-columns: minmax(0, 650px) 112px;
+  grid-template-columns: minmax(0, 650px) 180px;
   justify-content: space-between;
   gap: 48px;
   align-items: start;
@@ -29,7 +29,7 @@
 }
 
 .home-page .portrait-frame {
-  width: 112px;
+  width: 180px;
   min-height: 0;
   aspect-ratio: 4 / 5;
   justify-self: end;
@@ -259,7 +259,7 @@
   }
 
   .home-page .portrait-frame {
-    width: 100px;
+    width: 150px;
     justify-self: start;
   }
 
