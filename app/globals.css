@@ -625,51 +625,68 @@ p { margin: 0; }
   letter-spacing: .06em;
 }
 
-.publication-books { display: grid; grid-template-columns: 1fr; gap: 44px; max-width: 850px; }
+.publications-page .page-intro { padding-block: 70px 64px; }
+.publications-page .page-intro h1 {
+  max-width: 760px;
+  font-size: clamp(42px, 4.6vw, 58px);
+}
+.publications-page .page-deck {
+  margin-top: 22px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.publications-page .content-section { padding-block: 64px 68px; }
+.publications-page .section-heading { margin-bottom: 30px; }
+.publications-page .section-heading h2,
+.publications-page .articles-section h2 {
+  font-size: clamp(34px, 3.3vw, 42px);
+}
+.publication-books { display: grid; grid-template-columns: 1fr; gap: 28px; max-width: 850px; }
 .publication-books .book-item {
   grid-template-columns: 150px 1fr;
   align-items: start;
-  padding-bottom: 44px;
+  padding-bottom: 30px;
   border-bottom: 1px solid var(--line);
 }
-.publication-books .book-copy h3 { max-width: 650px; font-size: 36px; }
-.publication-books .book-copy > span { display: block; max-width: 600px; font-size: 17px; line-height: 1.7; }
+.publication-books .book-copy h3 { max-width: 650px; margin-block: 10px; font-size: 30px; }
+.publication-books .book-copy > span { display: block; max-width: 600px; font-size: 15px; line-height: 1.6; }
+.publication-books .book-copy > .book-link { margin-top: 14px; }
 .articles-section {
   display: grid;
   grid-template-columns: .48fr 1.2fr;
   gap: 70px;
   border-top: 1px solid var(--line);
-  padding-block: 100px;
+  padding-block: 66px 70px;
 }
 .article-list { border-top: 1px solid var(--line); }
 .article-list article {
   display: grid;
   grid-template-columns: 90px 1fr;
   gap: 24px;
-  padding-block: 30px;
+  padding-block: 22px;
   border-bottom: 1px solid var(--line);
 }
 .article-list > article > span { color: var(--blue); font-family: Georgia, serif; font-size: 14px; }
 .article-list h3 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 29px;
+  font-size: 24px;
   font-weight: 400;
   letter-spacing: -.02em;
 }
 .article-list h3 a span { color: var(--blue); font-family: Inter, sans-serif; font-size: 15px; }
 .article-list h3 a:hover { color: var(--blue); }
 .article-list p:nth-of-type(1) {
-  margin-top: 8px;
+  margin-top: 6px;
   color: var(--blue);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: .13em;
   text-transform: uppercase;
 }
-.article-list p:nth-of-type(2) { margin-top: 13px; color: var(--muted); font-size: 13px; line-height: 1.65; }
-.record-note { border-top: 1px solid var(--ink); padding-block: 58px 82px; }
-.record-note p { max-width: 760px; color: var(--muted); font-family: Georgia, serif; font-size: 18px; line-height: 1.7; }
+.article-list p:nth-of-type(2) { margin-top: 9px; color: var(--muted); font-size: 13px; line-height: 1.58; }
+.record-note { border-top: 1px solid var(--ink); padding-block: 38px 56px; }
+.record-note p { max-width: 760px; color: var(--muted); font-family: Georgia, serif; font-size: 16px; line-height: 1.65; }
 
 .teaching-section {
   display: grid;
@@ -858,8 +875,18 @@ p { margin: 0; }
   .newsletter-inner { display: block; }
   .newsletter-inner > div { margin-block: 30px 38px; }
   .publication-books .book-item { grid-template-columns: 100px 1fr; }
-  .publication-books .book-copy h3 { font-size: 27px; }
-  .articles-section { padding-block: 74px; }
+  .publication-books .book-copy h3 { font-size: 25px; }
+  .publications-page .page-intro { padding-block: 48px 46px; }
+  .publications-page .page-intro h1 { font-size: clamp(36px, 10vw, 46px); }
+  .publications-page .page-deck { margin-top: 18px; font-size: 17px; }
+  .publications-page .content-section { padding-block: 48px 52px; }
+  .publications-page .section-heading { margin-bottom: 24px; }
+  .publications-page .section-heading h2,
+  .publications-page .articles-section h2 { font-size: 36px; }
+  .articles-section { padding-block: 50px 54px; }
+  .article-list article { padding-block: 18px; }
+  .article-list h3 { font-size: 23px; }
+  .record-note { padding-block: 32px 44px; }
   .teaching-section { padding-block: 72px 86px; }
   .teaching-method { padding-block: 72px; }
   .materials-note { padding-block: 66px 82px; }

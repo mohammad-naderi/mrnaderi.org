@@ -49,7 +49,7 @@ export function SiteFooter() {
           ))}
         </div>
         <p className="footer-note">
-          Toronto · <a href="mailto:contact@mrnaderi.org">contact@mrnaderi.org</a>
+          <a href="mailto:contact@mrnaderi.org">contact@mrnaderi.org</a>
         </p>
       </div>
     </footer>

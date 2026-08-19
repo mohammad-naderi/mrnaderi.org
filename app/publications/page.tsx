@@ -73,14 +73,8 @@ export default function PublicationsPage() {
   return (
     <>
       <SiteHeader />
-      <main>
-        <PageIntro eyebrow="Publications" title="Books, articles, and chapters.">
-          <p>
-            Work on Badiou, mathematical ontology, psychoanalysis,
-            subjectivity, politics, and the Theory of Discipline—from early
-            collaborations on fuzzy logic to the present philosophical project.
-          </p>
-        </PageIntro>
+      <main className="publications-page">
+        <PageIntro eyebrow="Publications" title="Books, articles, and chapters." />
 
         <section className="content-section shell">
           <div className="section-heading">
