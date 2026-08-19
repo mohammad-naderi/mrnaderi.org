@@ -2,28 +2,36 @@
 
 .home-page .hero {
   min-height: 0;
-  grid-template-columns: 1fr 0.62fr;
-  padding-block: 42px 48px;
+  display: block;
+  padding-block: 32px 36px;
 }
 
 .home-page .hero h1 {
-  max-width: 660px;
-  font-size: clamp(42px, 4vw, 50px);
-  line-height: 1.06;
+  max-width: 860px;
+  font-size: clamp(36px, 3.4vw, 42px);
+  line-height: 1.08;
+}
+
+.home-introduction {
+  display: grid;
+  grid-template-columns: minmax(0, 650px) 112px;
+  justify-content: space-between;
+  gap: 48px;
+  align-items: start;
+  margin-top: 18px;
 }
 
 .home-page .hero-intro {
   max-width: 650px;
-  margin-top: 24px;
-  font-size: 18px;
-  line-height: 1.64;
+  margin-top: 0;
+  font-size: 17px;
+  line-height: 1.55;
 }
 
 .home-page .portrait-frame {
-  width: min(100%, 380px);
+  width: 112px;
   min-height: 0;
   aspect-ratio: 4 / 5;
-  align-self: center;
   justify-self: end;
 }
 
@@ -40,7 +48,7 @@
 }
 
 .home-opening-link {
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .home-opening-link:hover,
@@ -51,12 +59,12 @@
 
 .home-project {
   display: grid;
-  grid-template-columns: 0.62fr 1fr;
-  column-gap: 84px;
-  row-gap: 28px;
+  grid-template-columns: 0.56fr 1fr;
+  column-gap: 64px;
+  row-gap: 16px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding-block: 52px 56px;
+  padding-block: 40px 44px;
 }
 
 .home-project h2,
@@ -71,16 +79,16 @@
 
 .home-project h2 {
   grid-row: 1 / span 2;
-  max-width: 390px;
-  font-size: clamp(42px, 4.2vw, 58px);
+  max-width: 340px;
+  font-size: clamp(36px, 3.5vw, 44px);
 }
 
 .home-project > p {
   max-width: 690px;
   color: #4f5752;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
-  line-height: 1.72;
+  font-size: 17px;
+  line-height: 1.56;
 }
 
 .home-project > .home-editorial-link {
@@ -90,27 +98,36 @@
 }
 
 .home-page .section {
-  padding-block: 58px;
+  padding-block: 44px;
 }
 
 .home-section-heading {
   display: grid;
-  grid-template-columns: 0.62fr 1fr;
-  column-gap: 84px;
+  grid-template-columns: 0.56fr 1fr;
+  column-gap: 64px;
   align-items: end;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
-.home-section-heading h2 {
-  font-size: clamp(40px, 4.2vw, 58px);
+.home-section-heading h2,
+.home-books .section-heading h2 {
+  font-size: clamp(36px, 3.5vw, 44px);
 }
 
-.home-section-heading > p {
+.home-writing-intro > p {
   max-width: 610px;
   color: var(--muted);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.home-writing-intro .home-editorial-link {
+  margin-top: 10px;
+}
+
+.home-books .section-heading {
+  margin-bottom: 26px;
 }
 
 .home-writing-list {
@@ -120,10 +137,10 @@
 .home-writing-entry {
   display: grid;
   grid-template-columns: 150px minmax(0, 1fr) 110px;
-  gap: 34px;
+  gap: 28px;
   align-items: start;
   border-top: 1px solid var(--line);
-  padding-block: 22px 24px;
+  padding-block: 18px 20px;
 }
 
 .home-writing-meta > span,
@@ -146,12 +163,12 @@
 }
 
 .home-writing-entry h3 {
-  margin: 0 0 13px;
+  margin: 0 0 8px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 31px;
+  font-size: 26px;
   font-weight: 400;
   letter-spacing: -0.025em;
-  line-height: 1.14;
+  line-height: 1.16;
 }
 
 .home-writing-entry > div:nth-child(2) > p {
@@ -159,7 +176,7 @@
   color: var(--muted);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.52;
 }
 
 .home-writing-status {
@@ -182,38 +199,42 @@
   line-height: 1.48;
 }
 
+.home-books .book-description {
+  line-height: 1.5;
+}
+
 .home-context {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 .home-context article {
-  padding: 48px 70px 52px 0;
+  padding: 36px 64px 40px 0;
 }
 
 .home-context article + article {
   padding-right: 0;
-  padding-left: 70px;
+  padding-left: 64px;
   border-left: 1px solid var(--line);
 }
 
 .home-context h2 {
-  font-size: 38px;
+  font-size: 30px;
 }
 
 .home-context article > p {
   max-width: 510px;
-  margin-block: 24px 25px;
+  margin-block: 16px 18px;
   color: var(--muted);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 16px;
-  line-height: 1.72;
+  line-height: 1.56;
 }
 
 @media (max-width: 1050px) {
   .home-project,
   .home-section-heading {
-    column-gap: 56px;
+    column-gap: 44px;
   }
 
   .home-writing-entry {
@@ -224,27 +245,28 @@
 
 @media (max-width: 760px) {
   .home-page .hero {
-    grid-template-columns: 1fr;
-    padding-block: 34px 42px;
+    padding-block: 28px 34px;
   }
 
   .home-page .hero h1 {
-    font-size: clamp(38px, 11vw, 46px);
+    font-size: clamp(34px, 9.5vw, 40px);
   }
 
-  .home-page .hero-intro {
-    font-size: 17px;
+  .home-introduction {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 16px;
   }
 
   .home-page .portrait-frame {
-    width: min(100%, 350px);
+    width: 100px;
     justify-self: start;
   }
 
   .home-project {
     grid-template-columns: 1fr;
-    gap: 26px;
-    padding-block: 44px 48px;
+    gap: 16px;
+    padding-block: 36px 40px;
   }
 
   .home-project h2 {
@@ -253,7 +275,7 @@
   }
 
   .home-project > p {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .home-project > .home-editorial-link {
@@ -262,19 +284,19 @@
   }
 
   .home-page .section {
-    padding-block: 48px;
+    padding-block: 38px;
   }
 
   .home-section-heading {
     grid-template-columns: 1fr;
-    gap: 20px;
-    margin-bottom: 34px;
+    gap: 14px;
+    margin-bottom: 22px;
   }
 
   .home-writing-entry {
     grid-template-columns: 1fr;
-    gap: 18px;
-    padding-block: 29px 34px;
+    gap: 14px;
+    padding-block: 20px 22px;
   }
 
   .home-writing-meta {
@@ -288,7 +310,7 @@
   }
 
   .home-writing-entry h3 {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .home-writing-status {
@@ -302,7 +324,7 @@
 
   .home-context article,
   .home-context article + article {
-    padding: 42px 0 46px;
+    padding: 32px 0 36px;
     border-left: 0;
   }
 
