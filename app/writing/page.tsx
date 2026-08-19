@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { PageIntro, SiteFooter, SiteHeader } from "@/components/site";
 
 export const metadata: Metadata = { title: "Writing" };
@@ -42,23 +41,18 @@ export default function WritingPage() {
     <>
       <SiteHeader />
       <main>
-        <PageIntro eyebrow="Writing" title="Short philosophy with a public life.">
+        <PageIntro eyebrow="Writing" title="Short philosophy with a public life." />
+
+        <section className="page-description shell" id="subscribe">
           <p>
-            Notes and complete interventions emerging from current research:
-            more concentrated than a chapter, more developed than a private
-            notebook entry, and published when the work produces them.
+            Notes and complete interventions emerging from current research: more
+            concentrated than a chapter, more developed than a private notebook
+            entry, and published when the work produces them. These pieces will
+            also appear through Substack once the publication is opened.
           </p>
-        </PageIntro>
+        </section>
 
         <section className="writing-list shell">
-          <div className="writing-status">
-            <p className="eyebrow">First sequence</p>
-            <p>
-              These pieces are in preparation. The Rimbaud essay will inaugurate
-              the series and the Substack once its title and publication identity
-              are settled.
-            </p>
-          </div>
           <div>
             {essays.map((essay, index) => (
               <article className={index === 0 ? "essay-row featured" : "essay-row"} id={essay.id} key={essay.id}>
@@ -73,21 +67,6 @@ export default function WritingPage() {
                 <span className="essay-state">In preparation</span>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className="newsletter-block" id="subscribe">
-          <div className="shell newsletter-inner">
-            <p className="eyebrow light">Substack</p>
-            <div>
-              <h2>No content calendar. A sequence of thought.</h2>
-              <p>
-                New essays will arrive by email when a line of research has
-                become a complete piece of writing. The publication name and
-                subscription link will be added here when the Substack is opened.
-              </p>
-            </div>
-            <Link href="/about">About Mohammad Reza Naderi <span aria-hidden="true">→</span></Link>
           </div>
         </section>
       </main>
