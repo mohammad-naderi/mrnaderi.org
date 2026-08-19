@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageIntro, SiteFooter, SiteHeader } from "@/components/site";
+import { SiteFooter, SiteHeader } from "@/components/site";
 
 export const metadata: Metadata = { title: "Teaching & Talks" };
 
@@ -40,25 +40,26 @@ export default function TeachingPage() {
   return (
     <>
       <SiteHeader />
-      <main>
-        <PageIntro eyebrow="Teaching & talks" title="Philosophy in the room.">
+      <main className="teaching-page">
+        <section className="teaching-title shell">
+          <h1>Teaching &amp; Talks</h1>
+        </section>
+
+        <section className="page-description shell">
           <p>
-            A teaching practice extending from a decade devoted to Rumi’s
-            <em> Masnavi</em> and Shabestari’s <em>Golshan-e Rāz</em> to contemporary
-            French philosophy at the Toronto Psychoanalytic Society &amp; Institute,
-            invited seminars, and lectures.
+            Selected teaching, seminars, and talks. Recordings, transcripts, and
+            related materials will be linked here where available; selected
+            transcripts will also be published on Substack.
           </p>
-        </PageIntro>
+        </section>
 
         <section className="teaching-section shell">
           <div className="teaching-aside">
-            <p className="eyebrow">Selected teaching & talks</p>
+            <p className="eyebrow">Selected</p>
             <h2>Seminars and presentations</h2>
             <p>
-              Across Persian mystical poetry, Hegel and materialism, structural
-              determination, and Deleuze, teaching remains an occasion to test
-              how thought is carried by a text—and how something genuinely new
-              can emerge from collective inquiry.
+              Recent seminars and presentations are listed alongside earlier
+              teaching and invited talks.
             </p>
           </div>
           <div className="session-list">
@@ -89,8 +90,8 @@ export default function TeachingPage() {
         <section className="materials-note shell">
           <h2>Recordings and materials</h2>
           <p>
-            Selected descriptions, reading lists, recordings, and teaching
-            materials will be added as the archive is assembled.
+            Recordings, transcripts, reading lists, and other materials will be
+            added to individual entries as they become available.
           </p>
         </section>
       </main>
