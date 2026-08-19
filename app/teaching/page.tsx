@@ -52,12 +52,6 @@ export default function TeachingPage() {
         </section>
 
         <section className="teaching-section content-section shell">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Selected</p>
-              <h2>Seminars and presentations</h2>
-            </div>
-          </div>
           <div className="session-list">
             {sessions.map((session) => (
               <article key={session.title}>
@@ -70,25 +64,6 @@ export default function TeachingPage() {
               </article>
             ))}
           </div>
-        </section>
-
-        <section className="teaching-method">
-          <div className="shell">
-            <p className="eyebrow light">Method</p>
-            <blockquote>
-              Teaching is not the transfer of a finished philosophy. It is one
-              of the situations in which a line of thought is tested, clarified,
-              and sometimes genuinely transformed.
-            </blockquote>
-          </div>
-        </section>
-
-        <section className="materials-note shell">
-          <h2>Recordings and materials</h2>
-          <p>
-            Recordings, transcripts, reading lists, and other materials will be
-            added to individual entries as they become available.
-          </p>
         </section>
       </main>
       <SiteFooter />
