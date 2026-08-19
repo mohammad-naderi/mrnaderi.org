@@ -31,33 +31,29 @@ export default function Home() {
         <section className="hero shell">
           <div className="hero-copy">
             <h1>Truth, Discipline, and Radical Novelty</h1>
-            <div className="home-introduction">
-              <div>
-                <p className="hero-intro">
-                  I am a philosopher and author based in Toronto. My work develops the
-                  Theory of Discipline, an account of the forms of thought through which
-                  a consistency that did not previously exist can be composed. The project
-                  emerged from sustained engagement with Alain Badiou and mathematical
-                  ontology and now forms the basis of my continuing philosophical work.
-                </p>
-                <Link className="home-opening-link" href="/about">
-                  Read About
-                </Link>
-              </div>
-
-              <figure className="portrait-frame">
-                <Image
-                  src="/reza-naderi-portrait-31649-retouched.png"
-                  alt="Portrait of Mohammad Reza Naderi against cedar foliage"
-                  width={1152}
-                  height={1536}
-                  sizes="(max-width: 760px) 150px, 180px"
-                  priority
-                  unoptimized
-                />
-              </figure>
-            </div>
+            <p className="hero-intro">
+              I am a philosopher and author based in Toronto. My work develops the
+              Theory of Discipline, an account of the forms of thought through which
+              a consistency that did not previously exist can be composed. The project
+              emerged from sustained engagement with Alain Badiou and mathematical
+              ontology and now forms the basis of my continuing philosophical work.
+            </p>
+            <Link className="home-opening-link" href="/about">
+              Read About
+            </Link>
           </div>
+
+          <figure className="portrait-frame">
+            <Image
+              src="/reza-naderi-portrait-31649-retouched.png"
+              alt="Portrait of Mohammad Reza Naderi against cedar foliage"
+              width={1152}
+              height={1536}
+              sizes="(max-width: 760px) calc(100vw - 38px), (max-width: 1180px) 38vw, 470px"
+              priority
+              unoptimized
+            />
+          </figure>
         </section>
 
         <section className="home-project shell" aria-labelledby="theory-title">

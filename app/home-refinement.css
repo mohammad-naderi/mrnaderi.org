@@ -2,36 +2,28 @@
 
 .home-page .hero {
   min-height: 0;
-  display: block;
-  padding-block: 32px 36px;
+  grid-template-columns: 1fr 0.62fr;
+  padding-block: 42px 48px;
 }
 
 .home-page .hero h1 {
-  max-width: 860px;
-  font-size: clamp(36px, 3.4vw, 42px);
-  line-height: 1.08;
-}
-
-.home-introduction {
-  display: grid;
-  grid-template-columns: minmax(0, 650px) 180px;
-  justify-content: space-between;
-  gap: 48px;
-  align-items: start;
-  margin-top: 18px;
+  max-width: 660px;
+  font-size: clamp(42px, 4vw, 50px);
+  line-height: 1.06;
 }
 
 .home-page .hero-intro {
   max-width: 650px;
-  margin-top: 0;
-  font-size: 17px;
-  line-height: 1.55;
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 1.64;
 }
 
 .home-page .portrait-frame {
-  width: 180px;
+  width: min(100%, 380px);
   min-height: 0;
   aspect-ratio: 4 / 5;
+  align-self: center;
   justify-self: end;
 }
 
@@ -48,7 +40,7 @@
 }
 
 .home-opening-link {
-  margin-top: 16px;
+  margin-top: 24px;
 }
 
 .home-opening-link:hover,
@@ -245,21 +237,20 @@
 
 @media (max-width: 760px) {
   .home-page .hero {
-    padding-block: 28px 34px;
+    grid-template-columns: 1fr;
+    padding-block: 34px 42px;
   }
 
   .home-page .hero h1 {
-    font-size: clamp(34px, 9.5vw, 40px);
+    font-size: clamp(38px, 11vw, 46px);
   }
 
-  .home-introduction {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-top: 16px;
+  .home-page .hero-intro {
+    font-size: 17px;
   }
 
   .home-page .portrait-frame {
-    width: 150px;
+    width: min(100%, 350px);
     justify-self: start;
   }
 
