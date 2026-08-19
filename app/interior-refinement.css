@@ -48,46 +48,46 @@
   font-size: 34px;
 }
 
-/* Teaching & Talks follows the same compact editorial rhythm as the other
-   interior pages: simple title, standard description, then the record itself. */
-.teaching-title {
+/* Teaching & Talks uses the same page-opening hierarchy and editorial rhythm
+   as Publications: eyebrow, serif title, description, then the record. */
+.teaching-page .page-intro {
   padding-block: 60px 52px;
-  border-bottom: 1px solid var(--line);
 }
 
-.teaching-title h1 {
+.teaching-page .page-intro h1 {
   max-width: 760px;
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(42px, 4.6vw, 58px);
-  font-weight: 400;
-  letter-spacing: -.045em;
-  line-height: .99;
 }
 
 .teaching-page .teaching-section {
-  grid-template-columns: .62fr 1.38fr;
-  gap: 52px;
-  padding-block: 48px 62px;
+  display: block;
+  padding-block: 48px 32px;
 }
 
-.teaching-page .teaching-aside h2 {
-  font-size: clamp(30px, 2.6vw, 36px);
+.teaching-page .section-heading {
+  margin-bottom: 22px;
 }
 
-.teaching-page .teaching-aside > p:last-child {
-  margin-top: 18px;
-  font-size: 14px;
-  line-height: 1.65;
+.teaching-page .section-heading h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 3vw, 38px);
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1.08;
+}
+
+.teaching-page .session-list {
+  max-width: 850px;
 }
 
 .teaching-page .session-list article {
-  padding-block: 20px;
+  padding-block: 18px;
 }
 
 .teaching-page .session-list h3 {
-  margin: 14px 0 8px;
-  font-size: 25px;
+  margin: 11px 0 7px;
+  font-size: 24px;
   line-height: 1.18;
 }
 
@@ -208,20 +208,8 @@
     font-size: 31px;
   }
 
-  .teaching-title {
-    padding-block: 42px 40px;
-  }
-
-  .teaching-title h1 {
-    font-size: clamp(36px, 10vw, 46px);
-  }
-
   .teaching-page .teaching-section {
     padding-block: 38px 48px;
-  }
-
-  .teaching-page .teaching-aside h2 {
-    font-size: 32px;
   }
 
   .teaching-page .teaching-method {

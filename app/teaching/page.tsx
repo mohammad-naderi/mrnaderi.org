@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SiteFooter, SiteHeader } from "@/components/site";
+import { PageIntro, SiteFooter, SiteHeader } from "@/components/site";
 
 export const metadata: Metadata = { title: "Teaching & Talks" };
 
@@ -41,9 +41,7 @@ export default function TeachingPage() {
     <>
       <SiteHeader />
       <main className="teaching-page">
-        <section className="teaching-title shell">
-          <h1>Teaching &amp; Talks</h1>
-        </section>
+        <PageIntro eyebrow="Teaching & talks" title="Teaching & Talks." />
 
         <section className="page-description shell">
           <p>
@@ -53,14 +51,12 @@ export default function TeachingPage() {
           </p>
         </section>
 
-        <section className="teaching-section shell">
-          <div className="teaching-aside">
-            <p className="eyebrow">Selected</p>
-            <h2>Seminars and presentations</h2>
-            <p>
-              Recent seminars and presentations are listed alongside earlier
-              teaching and invited talks.
-            </p>
+        <section className="teaching-section content-section shell">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Selected</p>
+              <h2>Seminars and presentations</h2>
+            </div>
           </div>
           <div className="session-list">
             {sessions.map((session) => (
