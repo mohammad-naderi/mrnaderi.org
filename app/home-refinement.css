@@ -3,7 +3,7 @@
 .home-page .hero {
   min-height: 0;
   grid-template-columns: 1.08fr 0.78fr;
-  padding-block: 72px 88px;
+  padding-block: 56px 68px;
 }
 
 .home-page .hero h1 {
@@ -48,7 +48,7 @@
   row-gap: 28px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding-block: 88px 94px;
+  padding-block: 66px 72px;
 }
 
 .home-project h2,
@@ -75,12 +75,22 @@
   line-height: 1.72;
 }
 
+.home-project > .home-editorial-link {
+  grid-column: 2;
+  justify-self: start;
+  margin-top: -8px;
+}
+
+.home-page .section {
+  padding-block: 72px;
+}
+
 .home-section-heading {
   display: grid;
   grid-template-columns: 0.62fr 1fr;
   column-gap: 84px;
   align-items: end;
-  margin-bottom: 44px;
+  margin-bottom: 34px;
 }
 
 .home-section-heading h2 {
@@ -105,7 +115,7 @@
   gap: 34px;
   align-items: start;
   border-top: 1px solid var(--line);
-  padding-block: 31px 34px;
+  padding-block: 25px 28px;
 }
 
 .home-writing-meta > span,
@@ -170,7 +180,7 @@
 }
 
 .home-context article {
-  padding: 82px 70px 90px 0;
+  padding: 62px 70px 66px 0;
 }
 
 .home-context article + article {
@@ -207,7 +217,7 @@
 @media (max-width: 760px) {
   .home-page .hero {
     grid-template-columns: 1fr;
-    padding-block: 54px 64px;
+    padding-block: 44px 52px;
   }
 
   .home-page .hero h1 {
@@ -221,7 +231,7 @@
   .home-project {
     grid-template-columns: 1fr;
     gap: 26px;
-    padding-block: 68px 72px;
+    padding-block: 52px 56px;
   }
 
   .home-project h2 {
@@ -231,6 +241,15 @@
 
   .home-project > p {
     font-size: 17px;
+  }
+
+  .home-project > .home-editorial-link {
+    grid-column: auto;
+    margin-top: -4px;
+  }
+
+  .home-page .section {
+    padding-block: 56px;
   }
 
   .home-section-heading {
@@ -270,7 +289,7 @@
 
   .home-context article,
   .home-context article + article {
-    padding: 64px 0 70px;
+    padding: 50px 0 54px;
     border-left: 0;
   }
 

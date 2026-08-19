@@ -39,8 +39,8 @@ export default function Home() {
               ontology and now forms the basis of a broader philosophical inquiry into
               truth, radical novelty, and the possibility of the new.
             </p>
-            <Link className="home-opening-link" href="/philosophy">
-              Read the philosophical overview
+            <Link className="home-opening-link" href="/about">
+              Read About
             </Link>
           </div>
 
@@ -76,29 +76,9 @@ export default function Home() {
             worlds affected by that thinking. These consequences appear as novelties—or,
             more precisely, as what I call radical novelties.
           </p>
-        </section>
-
-        <section className="home-writing section shell" aria-labelledby="current-writing">
-          <div className="home-section-heading">
-            <h2 id="current-writing">Current Writing</h2>
-            <p>A first sequence of shorter essays emerging from current research is now in preparation.</p>
-          </div>
-
-          <div className="home-writing-list">
-            {notes.map((note) => (
-              <article className="home-writing-entry" key={note.number}>
-                <div className="home-writing-meta">
-                  <span>{note.number}</span>
-                  <p>{note.tag}</p>
-                </div>
-                <div>
-                  <h3>{note.title}</h3>
-                  <p>{note.text}</p>
-                </div>
-                <p className="home-writing-status">In preparation</p>
-              </article>
-            ))}
-          </div>
+          <Link className="home-editorial-link" href="/philosophy">
+            Read Philosophy
+          </Link>
         </section>
 
         <section className="home-books section shell" aria-labelledby="publications-title">
@@ -134,6 +114,29 @@ export default function Home() {
               description="A companion to The Immanence of Truths that develops a systematic account of the Theory of Discipline."
               href="https://www.bloomsbury.com/us/badiou-and-disciplinary-truths-9781350555440/"
             />
+          </div>
+        </section>
+
+        <section className="home-writing section shell" aria-labelledby="current-writing">
+          <div className="home-section-heading">
+            <h2 id="current-writing">Current Writing</h2>
+            <p>A first sequence of shorter essays emerging from current research is now in preparation.</p>
+          </div>
+
+          <div className="home-writing-list">
+            {notes.map((note) => (
+              <article className="home-writing-entry" key={note.number}>
+                <div className="home-writing-meta">
+                  <span>{note.number}</span>
+                  <p>{note.tag}</p>
+                </div>
+                <div>
+                  <h3>{note.title}</h3>
+                  <p>{note.text}</p>
+                </div>
+                <p className="home-writing-status">In preparation</p>
+              </article>
+            ))}
           </div>
         </section>
 
