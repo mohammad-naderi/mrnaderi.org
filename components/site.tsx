@@ -117,13 +117,13 @@ export function PageIntro({
 }: {
   eyebrow: string;
   title: string;
-  children: ReactNode;
+  children?: ReactNode;
 }) {
   return (
     <section className="page-intro shell">
       <p className="eyebrow">{eyebrow}</p>
       <h1>{title}</h1>
-      <div className="page-deck">{children}</div>
+      {children ? <div className="page-deck">{children}</div> : null}
     </section>
   );
 }
