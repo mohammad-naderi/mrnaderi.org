@@ -30,14 +30,13 @@ export default function Home() {
       <main className="home-page">
         <section className="hero shell">
           <div className="hero-copy">
-            <h1>Mohammad Reza Naderi</h1>
+            <h1>Truth, Discipline, and Radical Novelty</h1>
             <p className="hero-intro">
               I am a philosopher and author based in Toronto. My work develops the
               Theory of Discipline, an account of the forms of thought through which
               a consistency that did not previously exist can be composed. The project
               emerged from sustained engagement with Alain Badiou and mathematical
-              ontology and now forms the basis of a broader philosophical inquiry into
-              truth, radical novelty, and the possibility of the new.
+              ontology and now forms the basis of my continuing philosophical work.
             </p>
             <Link className="home-opening-link" href="/about">
               Read About
@@ -54,7 +53,6 @@ export default function Home() {
               priority
               unoptimized
             />
-            <figcaption>Mohammad Reza Naderi</figcaption>
           </figure>
         </section>
 
