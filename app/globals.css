@@ -375,9 +375,8 @@ p { margin: 0; }
   font-size: 11px;
   line-height: 1.6;
 }
-.footer-note a, .about-details a { border-bottom: 1px solid currentColor; }
-.footer-note a:hover, .about-details a:hover { color: white; }
-.about-details a:hover { color: var(--blue); }
+.footer-note a { border-bottom: 1px solid currentColor; }
+.footer-note a:hover { color: white; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 12px 24px; font-size: 11px; }
 
 .page-intro {
@@ -414,7 +413,7 @@ p { margin: 0; }
 .prose-large { max-width: 790px; }
 .prose-large h2, .project-section h2, .third-book h2, .newsletter-block h2,
 .writing-list h2, .articles-section h2, .teaching-aside h2, .materials-note h2,
-.about-prose h2, .cv-note h2 {
+.about-prose h1, .about-cv h2 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(40px, 4.3vw, 60px);
@@ -709,7 +708,7 @@ p { margin: 0; }
   grid-template-columns: .72fr 1.2fr;
   gap: 86px;
   align-items: start;
-  padding-block: 105px;
+  padding-block: 78px 84px;
 }
 .about-main figure {
   position: sticky;
@@ -728,32 +727,45 @@ p { margin: 0; }
   transform: translate(11%, -8%) scale(1.22);
   transform-origin: center center;
 }
-.about-prose h2 { max-width: 740px; }
+.about-prose h1 {
+  max-width: 740px;
+  font-size: clamp(40px, 3.8vw, 52px);
+}
 .about-prose > p:not(.eyebrow) {
   max-width: 710px;
-  margin-top: 25px;
+  margin-top: 22px;
   color: var(--muted);
   font-family: Georgia, serif;
-  font-size: 18px;
-  line-height: 1.75;
+  font-size: 17px;
+  line-height: 1.7;
 }
-.about-details {
+.about-prose > .about-lead {
+  margin-top: 24px;
+  color: #3e4641;
+  font-size: 20px;
+  line-height: 1.62;
+}
+.about-cv {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: .48fr 1.2fr;
+  gap: 70px;
   border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-  margin-bottom: 110px;
+  padding-block: 44px 66px;
 }
-.about-details article { min-height: 220px; padding: 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.about-details h3 { margin: 26px 0 12px; font-family: Georgia, serif; font-size: 26px; font-weight: 400; }
-.about-details article > p:not(.eyebrow) { margin-top: 8px; color: var(--muted); font-size: 12px; line-height: 1.65; }
-.cv-note { padding-block: 94px; background: var(--blue); color: white; }
-.cv-note .shell { display: grid; grid-template-columns: .42fr 1.1fr .85fr; gap: 60px; align-items: start; }
-.cv-note h2 { font-size: 45px; }
-.cv-copy > p { color: #dce3ed; font-family: Georgia, serif; font-size: 17px; line-height: 1.7; }
-.cv-actions { display: grid; justify-items: start; gap: 15px; margin-top: 24px; }
-.cv-word-link { color: #dce3ed; border-bottom-color: rgba(220, 227, 237, .55); }
-.cv-word-link:hover { color: white; }
+.about-cv h2 { font-size: 30px; }
+.about-cv > div > p {
+  max-width: 620px;
+  color: var(--muted);
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.about-cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 18px;
+}
 
 @media (max-width: 1050px) {
   .site-header nav { display: none; }
@@ -779,8 +791,7 @@ p { margin: 0; }
   .newsletter-inner { grid-template-columns: .4fr 1.4fr; }
   .newsletter-block a { grid-column: 2; }
   .about-main { grid-template-columns: .65fr 1fr; gap: 55px; }
-  .cv-note .shell { grid-template-columns: .4fr 1fr; }
-  .cv-copy { grid-column: 2; }
+  .about-cv { gap: 55px; }
 }
 
 @media (max-width: 760px) {
@@ -852,12 +863,10 @@ p { margin: 0; }
   .teaching-section { padding-block: 72px 86px; }
   .teaching-method { padding-block: 72px; }
   .materials-note { padding-block: 66px 82px; }
-  .about-main { padding-block: 72px; }
+  .about-main { padding-block: 56px 64px; }
   .about-main figure { position: static; }
-  .about-details { display: block; border-left: 0; margin-bottom: 80px; }
-  .about-details article { min-height: 0; padding-inline: 0; border-right: 0; }
-  .cv-note .shell { display: block; }
-  .cv-note h2 { margin-block: 28px; }
+  .about-prose h1 { font-size: 42px; }
+  .about-cv { grid-template-columns: 1fr; gap: 16px; padding-block: 38px 52px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
