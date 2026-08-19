@@ -1,0 +1,142 @@
+/* Shared interior-page treatment: preserve the homepage header, but use the
+   Philosophy-style editorial left rail on desktop everywhere else. */
+
+.page-description {
+  padding-block: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.page-description p {
+  max-width: 760px;
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.page-description strong {
+  margin-right: 6px;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* The Writing page now begins directly with the essay sequence. */
+.writing-list {
+  display: block;
+  padding-block: 48px 82px;
+}
+
+.writing-list > div {
+  width: 100%;
+}
+
+.essay-row {
+  grid-template-columns: 120px minmax(0, 1fr) auto;
+  gap: 26px;
+  padding-block: 27px;
+}
+
+.essay-row h2 {
+  font-size: 28px;
+}
+
+.essay-row.featured h2 {
+  font-size: 34px;
+}
+
+@media (min-width: 1000px) {
+  body:not(:has(.hero)) .site-header {
+    position: absolute;
+    top: 0;
+    left: max(40px, calc((100vw - 1440px) / 2 + 40px));
+    width: 250px;
+    border-bottom: 0;
+    z-index: 20;
+  }
+
+  body:not(:has(.hero)) .site-header .header-inner {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding-top: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  body:not(:has(.hero)) .site-header .wordmark {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 210px;
+  }
+
+  body:not(:has(.hero)) .site-header .wordmark-name {
+    max-width: 190px;
+    font-size: 30px;
+    line-height: 1.03;
+  }
+
+  body:not(:has(.hero)) .site-header .wordmark-rule,
+  body:not(:has(.hero)) .site-header .wordmark-field {
+    display: none;
+  }
+
+  body:not(:has(.hero)) .site-header nav {
+    margin-top: 54px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 12px;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  body:not(:has(.hero)) .site-header .subscribe-button {
+    margin-top: 44px;
+  }
+
+  /* Philosophy already has its own approved reading-column dimensions. */
+  body:not(:has(.hero)):not(:has(.philosophy-opening)) main .shell {
+    width: 900px;
+    max-width: calc(100% - 390px);
+    margin-left: max(390px, calc((100vw - 1440px) / 2 + 390px));
+    margin-right: auto;
+  }
+
+  body:has(.philosophy-opening) .site-header nav a[href="/philosophy"],
+  body:has(.writing-list) .site-header nav a[href="/writing"],
+  body:has(.publications-page) .site-header nav a[href="/publications"],
+  body:has(.teaching-section) .site-header nav a[href="/teaching"],
+  body:has(.about-main) .site-header nav a[href="/about"] {
+    color: var(--blue);
+  }
+}
+
+@media (max-width: 760px) {
+  .page-description {
+    padding-block: 20px;
+  }
+
+  .writing-list {
+    padding-block: 54px 76px;
+  }
+
+  .essay-row {
+    grid-template-columns: 65px minmax(0, 1fr);
+    gap: 18px;
+    padding-block: 26px;
+  }
+
+  .essay-row h2,
+  .essay-row.featured h2 {
+    font-size: 31px;
+  }
+}
