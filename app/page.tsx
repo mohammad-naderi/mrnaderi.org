@@ -1,25 +1,25 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowLink, BookSpine, SiteFooter, SiteHeader } from "@/components/site";
+import Link from "next/link";
+import { BookSpine, SiteFooter, SiteHeader } from "@/components/site";
 
 const notes = [
   {
+    number: "01",
     tag: "Poetry · Discipline",
-    title: "Rimbaud and the subject of poetry",
-    text: "A poet, an event, and a new consistency in poetic art are not the same thing. Rimbaud helps clarify why the subject is the discipline in composition.",
-    href: "/writing#rimbaud",
+    title: "Rimbaud and the Subject of Poetry",
+    text: "Rimbaud names three distinct things: an event in poetry, a poet, and a new consistency in poetic art. Distinguishing them helps clarify why the subject is the discipline in composition rather than the biographical individual.",
   },
   {
-    tag: "The Present · Novelty",
-    title: "The crisis of novelty",
-    text: "Why the crisis of truth is never encountered directly, but appears first as the exhaustion of our capacity to recognize the new.",
-    href: "/writing#crisis-of-novelty",
+    number: "02",
+    tag: "The Present · Truth",
+    title: "Why the Crisis of Truth Appears as a Crisis of Novelty",
+    text: "Truth is not encountered directly in everyday life. What first becomes visible is a blockage in the production and recognition of radical novelty; philosophy draws from this the deeper crisis of truth.",
   },
   {
-    tag: "Politics · Naturalization",
-    title: "The present made permanent",
-    text: "On the recurrent tendency to treat a contingent order as nature—and the foreclosure of radical novelty that follows.",
-    href: "/writing#naturalization",
+    number: "03",
+    tag: "Politics · Diagnosis",
+    title: "The Present Made Permanent",
+    text: "The recurrent enemy of novelty is naturalization: the transformation of a contingent arrangement into the horizon of the possible. Even thinking that denaturalizes one order can reproduce the same error elsewhere.",
   },
 ];
 
@@ -27,24 +27,21 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main className="home-page">
         <section className="hero shell">
           <div className="hero-copy">
-            <p className="eyebrow">Philosopher · Author</p>
-            <h1>Philosophy, truth, and the possibility of the new.</h1>
+            <h1>Mohammad Reza Naderi</h1>
             <p className="hero-intro">
-              My philosophical work concerns truth, novelty, and the forms of thought
-              through which a consistency that did not previously exist can be composed.
-              At its centre is the Theory of Discipline, a project that emerged from my
-              work on Alain Badiou and has developed into a more general account of
-              disciplinary thinking.
+              I am a philosopher and author based in Toronto. My work develops the
+              Theory of Discipline, an account of the forms of thought through which
+              a consistency that did not previously exist can be composed. The project
+              emerged from sustained engagement with Alain Badiou and mathematical
+              ontology and now forms the basis of a broader philosophical inquiry into
+              truth, radical novelty, and the possibility of the new.
             </p>
-            <div className="hero-actions">
-              <ArrowLink href="/writing">Read current writing</ArrowLink>
-              <Link className="text-link" href="/philosophy">
-                Explore the philosophy
-              </Link>
-            </div>
+            <Link className="home-opening-link" href="/philosophy">
+              Read the philosophical overview
+            </Link>
           </div>
 
           <figure className="portrait-frame">
@@ -61,64 +58,52 @@ export default function Home() {
           </figure>
         </section>
 
-        <section className="section shell" aria-labelledby="current-writing">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">From the notebook</p>
-              <h2 id="current-writing">Current writing</h2>
-            </div>
-            <Link className="text-link desktop-link" href="/writing">
-              View all writing
-            </Link>
+        <section className="home-project shell" aria-labelledby="theory-title">
+          <h2 id="theory-title">The Theory of Discipline</h2>
+          <p>
+            The Theory of Discipline is my principal philosophical project. It
+            formalizes what it means for thinking to be disciplinary. A disciplinary
+            thinking possesses certain constitutive and operative features that sustain
+            a particular ethos—one that treats the excess of being over thinking as
+            absolute: as the source of a consistency that did not previously exist.
+          </p>
+          <p>
+            A disciplinary thinking encounters this excess in the presence of an
+            impasse already existing within the discipline. Through a process I call
+            composition, it operates the encountered excess into a truth. When a truth
+            is composed, not only is that impasse resolved in the form of a new
+            consistency; further consequences also ensue and manifest themselves in the
+            worlds affected by that thinking. These consequences appear as novelties—or,
+            more precisely, as what I call radical novelties.
+          </p>
+        </section>
+
+        <section className="home-writing section shell" aria-labelledby="current-writing">
+          <div className="home-section-heading">
+            <h2 id="current-writing">Current Writing</h2>
+            <p>A first sequence of shorter essays emerging from current research is now in preparation.</p>
           </div>
 
-          <div className="notes-grid">
-            {notes.map((note, index) => (
-              <article className={index === 0 ? "note-card featured" : "note-card"} key={note.title}>
-                <p className="note-tag">{note.tag}</p>
-                <h3>{note.title}</h3>
-                <p>{note.text}</p>
-                <Link href={note.href} aria-label={`Read ${note.title}`}>
-                  Read the note <span aria-hidden="true">↗</span>
-                </Link>
+          <div className="home-writing-list">
+            {notes.map((note) => (
+              <article className="home-writing-entry" key={note.number}>
+                <div className="home-writing-meta">
+                  <span>{note.number}</span>
+                  <p>{note.tag}</p>
+                </div>
+                <div>
+                  <h3>{note.title}</h3>
+                  <p>{note.text}</p>
+                </div>
+                <p className="home-writing-status">In preparation</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="theory-band" aria-labelledby="theory-title">
-          <div className="shell theory-inner">
-            <div>
-              <p className="eyebrow light">A philosophical project</p>
-              <h2 id="theory-title">Theory of Discipline</h2>
-            </div>
-            <div className="theory-copy">
-              <p>
-                A discipline is a form of composition: a structured process through
-                which a consistency that did not previously exist can be produced.
-                The Theory of Discipline asks how such composition can proceed
-                immanently, how thought encounters its limits, and under what material
-                conditions a discipline can participate in the production of truth.
-              </p>
-              <p className="theory-proposition">
-                Discipline provides the logic of composition. Truth names an invariant
-                consistency composed where disciplinary thought encounters an impasse
-                in the presence of the excess of being over thought. Novelty is a
-                consequence of truth.
-              </p>
-              <ArrowLink href="/philosophy" variant="light">
-                Read the philosophical overview
-              </ArrowLink>
-            </div>
-          </div>
-        </section>
-
-        <section className="section shell" aria-labelledby="publications-title">
+        <section className="home-books section shell" aria-labelledby="publications-title">
           <div className="section-heading">
-            <div>
-              <p className="eyebrow">Selected work</p>
-              <h2 id="publications-title">Books</h2>
-            </div>
+            <h2 id="publications-title">Books</h2>
             <Link className="text-link desktop-link" href="/publications">
               Complete publications
             </Link>
@@ -129,62 +114,53 @@ export default function Home() {
               tone="ink"
               status="Lexington Books · 2023"
               title="Badiou, Infinity, and Subjectivity"
-              description="A study of infinity, formalism, and the transformation of subjectivity in Badiou's philosophy."
+              subtitle="Reading Hegel and Lacan after Badiou"
+              description="A study of the unity of Badiou’s intellectual development through axiomatic thought, mathematical infinity, and the emergence of the Theory of Discipline."
               href="https://www.bloomsbury.com/us/badiou-infinity-and-subjectivity-9781666931044/"
             />
             <BookSpine
               tone="blue"
               status="Routledge · 2024 · Co-editor"
-              title="Philosophy after Lacan"
-              description="A collection on the philosophical consequences and continuing force of Lacanian thought."
+              title="Philosophy After Lacan"
+              subtitle="Politics, Science, and Art"
+              description="A co-edited collection on the philosophical consequences of Lacanian thought in politics, science, and art."
               href="https://www.routledge.com/Philosophy-After-Lacan-Politics-Science-and-Art/Taheri-Vanderwees-Naderi/p/book/9781032546452"
             />
             <BookSpine
               tone="green"
               status="Bloomsbury Academic · Forthcoming 2027"
               title="Badiou and Disciplinary Truths"
-              description="A companion to The Immanence of Truths and the first full architecture of the Theory of Discipline."
+              subtitle="A Companion to The Immanence of Truths"
+              description="A companion to The Immanence of Truths that develops a systematic account of the Theory of Discipline."
               href="https://www.bloomsbury.com/us/badiou-and-disciplinary-truths-9781350555440/"
             />
           </div>
         </section>
 
-        <section className="split-section shell">
+        <section className="home-context shell" aria-label="Biography and teaching">
           <article>
-            <p className="eyebrow">Teaching & talks</p>
-            <h2>Philosophy in the room</h2>
+            <h2>Biography</h2>
             <p>
-              Seminars on structuralism, Deleuze, Badiou, contemporary thought,
-              and the problem of novelty—developed as sites of live inquiry,
-              not repetitions of finished work.
+              My route to philosophy began in Iran through independent study of
+              philosophical and Marxist texts, Islamic philosophy, Persian literature,
+              and mysticism. It later passed through mathematics and computer science
+              and a long professional life building technological systems and
+              organizations. These different formations remain present in my
+              philosophical work.
             </p>
-            <ArrowLink href="/teaching">View seminars and talks</ArrowLink>
+            <Link className="home-editorial-link" href="/about">About</Link>
           </article>
-          <article className="about-preview">
-            <p className="eyebrow">About</p>
-            <h2>An uncommon route to philosophy</h2>
+          <article>
+            <h2>Teaching</h2>
             <p>
-              Born in Iran and based in Toronto, Naderi came to academic
-              philosophy after a long career building technology organizations
-              and systems. That trajectory remains present in his attention to
-              formal structures, collective work, and the life of disciplines.
+              My teaching has ranged from Rumi’s <em>Masnavi</em> and Shabestari’s
+              <em> Golshan-e Rāz</em> to Hegel, structuralism, Deleuze, Badiou, and
+              contemporary French philosophy. I regard teaching as an occasion for
+              collective inquiry in which a line of thought can be tested, clarified,
+              and transformed.
             </p>
-            <ArrowLink href="/about">Read the biography</ArrowLink>
+            <Link className="home-editorial-link" href="/teaching">Teaching &amp; Talks</Link>
           </article>
-        </section>
-
-        <section className="subscribe-section shell" id="subscribe">
-          <p className="eyebrow">Essays by email</p>
-          <div>
-            <h2>Short philosophical writing, as the work produces it.</h2>
-            <p>
-              The Substack will publish complete interventions emerging from
-              current research—without an arbitrary weekly schedule.
-            </p>
-          </div>
-          <Link className="subscribe-large" href="/writing#subscribe">
-            Substack coming soon <span aria-hidden="true">→</span>
-          </Link>
         </section>
       </main>
       <SiteFooter />

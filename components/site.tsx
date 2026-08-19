@@ -74,12 +74,14 @@ export function ArrowLink({
 
 export function BookSpine({
   title,
+  subtitle,
   status,
   description,
   tone,
   href,
 }: {
   title: string;
+  subtitle?: string;
   status: string;
   description: string;
   tone: "ink" | "blue" | "green";
@@ -94,7 +96,8 @@ export function BookSpine({
       <div className="book-copy">
         <p>{status}</p>
         <h3>{title}</h3>
-        <span>{description}</span>
+        {subtitle ? <span className="book-subtitle">{subtitle}</span> : null}
+        <span className="book-description">{description}</span>
         {href ? <span className="book-link">Publisher details <span aria-hidden="true">↗</span></span> : null}
       </div>
     </article>
