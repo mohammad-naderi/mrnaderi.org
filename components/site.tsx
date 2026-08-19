@@ -15,8 +15,6 @@ export function SiteHeader() {
       <div className="shell header-inner">
         <Link className="wordmark" href="/" aria-label="Mohammad Reza Naderi home">
           <span className="wordmark-name">Mohammad Reza Naderi</span>
-          <span className="wordmark-rule" aria-hidden="true" />
-          <span className="wordmark-field">Philosopher &amp; Author</span>
         </Link>
         <nav aria-label="Primary navigation">
           {nav.map(([label, href]) => (
