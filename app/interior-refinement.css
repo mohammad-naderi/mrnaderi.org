@@ -24,7 +24,7 @@
   text-transform: uppercase;
 }
 
-/* The Writing page now begins directly with the essay sequence. */
+/* The Writing page begins directly with the essay sequence. */
 .writing-list {
   display: block;
   padding-block: 48px 82px;
@@ -46,6 +46,74 @@
 
 .essay-row.featured h2 {
   font-size: 34px;
+}
+
+/* Teaching & Talks follows the same compact editorial rhythm as the other
+   interior pages: simple title, standard description, then the record itself. */
+.teaching-title {
+  padding-block: 60px 52px;
+  border-bottom: 1px solid var(--line);
+}
+
+.teaching-title h1 {
+  max-width: 760px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 4.6vw, 58px);
+  font-weight: 400;
+  letter-spacing: -.045em;
+  line-height: .99;
+}
+
+.teaching-page .teaching-section {
+  grid-template-columns: .62fr 1.38fr;
+  gap: 52px;
+  padding-block: 48px 62px;
+}
+
+.teaching-page .teaching-aside h2 {
+  font-size: clamp(30px, 2.6vw, 36px);
+}
+
+.teaching-page .teaching-aside > p:last-child {
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.teaching-page .session-list article {
+  padding-block: 20px;
+}
+
+.teaching-page .session-list h3 {
+  margin: 14px 0 8px;
+  font-size: 25px;
+  line-height: 1.18;
+}
+
+.teaching-page .teaching-method {
+  padding-block: 54px;
+}
+
+.teaching-page .teaching-method blockquote {
+  max-width: 820px;
+  font-size: clamp(30px, 3vw, 40px);
+  line-height: 1.22;
+}
+
+.teaching-page .materials-note {
+  grid-template-columns: .62fr 1.38fr;
+  gap: 52px;
+  padding-block: 46px 58px;
+}
+
+.teaching-page .materials-note h2 {
+  font-size: 30px;
+}
+
+.teaching-page .materials-note p {
+  font-size: 15px;
+  line-height: 1.65;
 }
 
 @media (min-width: 1000px) {
@@ -114,7 +182,7 @@
   body:has(.philosophy-opening) .site-header nav a[href="/philosophy"],
   body:has(.writing-list) .site-header nav a[href="/writing"],
   body:has(.publications-page) .site-header nav a[href="/publications"],
-  body:has(.teaching-section) .site-header nav a[href="/teaching"],
+  body:has(.teaching-page) .site-header nav a[href="/teaching"],
   body:has(.about-main) .site-header nav a[href="/about"] {
     color: var(--blue);
   }
@@ -138,5 +206,33 @@
   .essay-row h2,
   .essay-row.featured h2 {
     font-size: 31px;
+  }
+
+  .teaching-title {
+    padding-block: 42px 40px;
+  }
+
+  .teaching-title h1 {
+    font-size: clamp(36px, 10vw, 46px);
+  }
+
+  .teaching-page .teaching-section {
+    padding-block: 38px 48px;
+  }
+
+  .teaching-page .teaching-aside h2 {
+    font-size: 32px;
+  }
+
+  .teaching-page .teaching-method {
+    padding-block: 48px;
+  }
+
+  .teaching-page .teaching-method blockquote {
+    font-size: 30px;
+  }
+
+  .teaching-page .materials-note {
+    padding-block: 38px 48px;
   }
 }
