@@ -76,6 +76,14 @@ export default function PublicationsPage() {
       <main className="publications-page">
         <PageIntro eyebrow="Publications" title="Books, articles, and chapters." />
 
+        <section className="author-name-note shell">
+          <p>
+            <strong>Author-name note.</strong> My publications have appeared
+            under both Reza Naderi and Mohammad Reza Naderi. I use Mohammad
+            Reza Naderi on this site.
+          </p>
+        </section>
+
         <section className="content-section shell">
           <div className="section-heading">
             <div>

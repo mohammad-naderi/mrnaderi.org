@@ -626,7 +626,7 @@ p { margin: 0; }
   letter-spacing: .06em;
 }
 
-.publications-page .page-intro { padding-block: 70px 64px; }
+.publications-page .page-intro { padding-block: 60px 52px; }
 .publications-page .page-intro h1 {
   max-width: 760px;
   font-size: clamp(42px, 4.6vw, 58px);
@@ -636,42 +636,62 @@ p { margin: 0; }
   font-size: 18px;
   line-height: 1.6;
 }
-.publications-page .content-section { padding-block: 64px 68px; }
-.publications-page .section-heading { margin-bottom: 30px; }
+.author-name-note {
+  padding-block: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.author-name-note p {
+  max-width: 760px;
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.author-name-note strong {
+  margin-right: 6px;
+  color: var(--ink);
+  font-family: Inter, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.publications-page .content-section { padding-block: 48px 32px; }
+.publications-page .section-heading { margin-bottom: 22px; }
 .publications-page .section-heading h2,
 .publications-page .articles-section h2 {
-  font-size: clamp(34px, 3.3vw, 42px);
+  font-size: clamp(32px, 3vw, 38px);
 }
-.publication-books { display: grid; grid-template-columns: 1fr; gap: 28px; max-width: 850px; }
+.publication-books { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 850px; }
 .publication-books .book-item {
   grid-template-columns: 150px 1fr;
   align-items: start;
-  padding-bottom: 30px;
+  padding-bottom: 24px;
   border-bottom: 1px solid var(--line);
 }
-.publication-books .book-copy h3 { max-width: 650px; margin-block: 10px; font-size: 30px; }
+.publication-books .book-copy h3 { max-width: 650px; margin-block: 8px; font-size: 28px; }
 .publication-books .book-copy > span { display: block; max-width: 600px; font-size: 15px; line-height: 1.6; }
-.publication-books .book-copy > .book-link { margin-top: 14px; }
+.publication-books .book-copy > .book-link { margin-top: 11px; }
 .articles-section {
   display: grid;
   grid-template-columns: .48fr 1.2fr;
-  gap: 70px;
+  gap: 56px;
   border-top: 1px solid var(--line);
-  padding-block: 66px 70px;
+  padding-block: 42px 54px;
 }
 .article-list { border-top: 1px solid var(--line); }
 .article-list article {
   display: grid;
   grid-template-columns: 90px 1fr;
   gap: 24px;
-  padding-block: 22px;
+  padding-block: 18px;
   border-bottom: 1px solid var(--line);
 }
 .article-list > article > span { color: var(--blue); font-family: Georgia, serif; font-size: 14px; }
 .article-list h3 {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   letter-spacing: -.02em;
 }
@@ -686,7 +706,7 @@ p { margin: 0; }
   text-transform: uppercase;
 }
 .article-list p:nth-of-type(2) { margin-top: 9px; color: var(--muted); font-size: 13px; line-height: 1.58; }
-.record-note { border-top: 1px solid var(--ink); padding-block: 38px 56px; }
+.record-note { border-top: 1px solid var(--ink); padding-block: 28px 40px; }
 .record-note p { max-width: 760px; color: var(--muted); font-family: Georgia, serif; font-size: 16px; line-height: 1.65; }
 
 .teaching-section {
@@ -876,18 +896,19 @@ p { margin: 0; }
   .newsletter-inner { display: block; }
   .newsletter-inner > div { margin-block: 30px 38px; }
   .publication-books .book-item { grid-template-columns: 100px 1fr; }
-  .publication-books .book-copy h3 { font-size: 25px; }
-  .publications-page .page-intro { padding-block: 48px 46px; }
+  .publication-books .book-copy h3 { font-size: 23px; }
+  .publications-page .page-intro { padding-block: 42px 40px; }
   .publications-page .page-intro h1 { font-size: clamp(36px, 10vw, 46px); }
   .publications-page .page-deck { margin-top: 18px; font-size: 17px; }
-  .publications-page .content-section { padding-block: 48px 52px; }
-  .publications-page .section-heading { margin-bottom: 24px; }
+  .author-name-note { padding-block: 20px; }
+  .publications-page .content-section { padding-block: 38px 28px; }
+  .publications-page .section-heading { margin-bottom: 20px; }
   .publications-page .section-heading h2,
-  .publications-page .articles-section h2 { font-size: 36px; }
-  .articles-section { padding-block: 50px 54px; }
-  .article-list article { padding-block: 18px; }
-  .article-list h3 { font-size: 23px; }
-  .record-note { padding-block: 32px 44px; }
+  .publications-page .articles-section h2 { font-size: 32px; }
+  .articles-section { padding-block: 34px 40px; }
+  .article-list article { padding-block: 15px; }
+  .article-list h3 { font-size: 21px; }
+  .record-note { padding-block: 24px 32px; }
   .teaching-section { padding-block: 72px 86px; }
   .teaching-method { padding-block: 72px; }
   .materials-note { padding-block: 66px 82px; }
