@@ -78,9 +78,8 @@ export default function PublicationsPage() {
 
         <section className="page-description shell">
           <p>
-            <strong>Author-name note.</strong> My publications have appeared
-            under both Reza Naderi and Mohammad Reza Naderi. I use Mohammad
-            Reza Naderi on this site.
+            My publications have appeared under both Reza Naderi and Mohammad
+            Reza Naderi. I use Mohammad Reza Naderi on this site.
           </p>
         </section>
 
