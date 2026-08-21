@@ -104,7 +104,7 @@ export default function Home() {
               subtitle="Politics, Science, and Art"
               description="A co-edited collection on the philosophical consequences of Lacanian thought in politics, science, and art."
               href="https://www.routledge.com/Philosophy-After-Lacan-Politics-Science-and-Art/Taheri-Vanderwees-Naderi/p/book/9781032546452"
-              coverSrc="https://books.google.com/books/content?id=bmxV0AEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api"
+              coverSrc="/philosophy-after-lacan.jpg"
             />
             <BookSpine
               tone="green"
