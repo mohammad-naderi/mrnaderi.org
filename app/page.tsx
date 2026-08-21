@@ -6,8 +6,9 @@ const notes = [
   {
     number: "01",
     tag: "Poetry · Discipline",
-    title: "Rimbaud and the Subject of Poetry",
+    title: "The Subject Called “Rimbaud”",
     text: "Rimbaud names three distinct things: an event in poetry, a poet, and a new consistency in poetic art. Distinguishing them helps clarify why the subject is the discipline in composition rather than the biographical individual.",
+    href: "https://mrnaderi.substack.com/p/the-subject-called-rimbaud",
   },
   {
     number: "02",
@@ -121,7 +122,7 @@ export default function Home() {
           <div className="home-section-heading">
             <h2 id="current-writing">Current Writing</h2>
             <div className="home-writing-intro">
-              <p>A first sequence of shorter essays emerging from current research is now in preparation.</p>
+              <p>Shorter essays emerging from current research are published here and through Substack as they are completed.</p>
               <Link className="home-editorial-link" href="/writing#subscribe">
                 Writing &amp; Substack
               </Link>
@@ -136,10 +137,16 @@ export default function Home() {
                   <p>{note.tag}</p>
                 </div>
                 <div>
-                  <h3>{note.title}</h3>
+                  <h3>
+                    {note.href ? <a href={note.href}>{note.title}</a> : note.title}
+                  </h3>
                   <p>{note.text}</p>
                 </div>
-                <p className="home-writing-status">In preparation</p>
+                {note.href ? (
+                  <a className="home-writing-status" href={note.href}>Read ↗</a>
+                ) : (
+                  <p className="home-writing-status">In preparation</p>
+                )}
               </article>
             ))}
           </div>

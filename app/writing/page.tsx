@@ -7,8 +7,9 @@ const essays = [
   {
     id: "rimbaud",
     area: "Poetry · Discipline",
-    title: "Rimbaud and the subject of poetry",
+    title: "The Subject Called “Rimbaud”",
     text: "Rimbaud names at least three distinct things: an event in poetry, a poet, and a new consistency in poetic art. Distinguishing them makes it possible to see why the biographical individual is not identical with the subject of the discipline.",
+    href: "https://mrnaderi.substack.com/p/the-subject-called-rimbaud",
   },
   {
     id: "crisis-of-novelty",
@@ -61,10 +62,16 @@ export default function WritingPage() {
                   <p>{essay.area}</p>
                 </div>
                 <div>
-                  <h2>{essay.title}</h2>
+                  <h2>
+                    {essay.href ? <a href={essay.href}>{essay.title}</a> : essay.title}
+                  </h2>
                   <p>{essay.text}</p>
                 </div>
-                <span className="essay-state">In preparation</span>
+                {essay.href ? (
+                  <a className="essay-state" href={essay.href}>Read ↗</a>
+                ) : (
+                  <span className="essay-state">In preparation</span>
+                )}
               </article>
             ))}
           </div>
