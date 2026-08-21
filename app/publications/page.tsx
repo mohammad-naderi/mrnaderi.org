@@ -105,7 +105,7 @@ export default function PublicationsPage() {
               title="Philosophy after Lacan"
               description="A collection examining the philosophical consequences of Lacanian thought and its continuing conceptual force."
               href="https://www.routledge.com/Philosophy-After-Lacan-Politics-Science-and-Art/Taheri-Vanderwees-Naderi/p/book/9781032546452"
-              coverSrc="https://books.google.com/books/content?id=bmxV0AEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api"
+              coverSrc="/philosophy-after-lacan.jpg"
             />
             <BookSpine
               tone="red"
