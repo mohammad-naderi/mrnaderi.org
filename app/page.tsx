@@ -95,6 +95,7 @@ export default function Home() {
               subtitle="Reading Hegel and Lacan after Badiou"
               description="A study of the unity of Badiou’s intellectual development through axiomatic thought, mathematical infinity, and the emergence of the Theory of Discipline."
               href="https://www.bloomsbury.com/us/badiou-infinity-and-subjectivity-9781666931044/"
+              coverSrc="https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360%2Cc_scale%2Cdpr_1.5/jackets/9781666931051.jpg"
             />
             <BookSpine
               tone="blue"
@@ -103,6 +104,7 @@ export default function Home() {
               subtitle="Politics, Science, and Art"
               description="A co-edited collection on the philosophical consequences of Lacanian thought in politics, science, and art."
               href="https://www.routledge.com/Philosophy-After-Lacan-Politics-Science-and-Art/Taheri-Vanderwees-Naderi/p/book/9781032546452"
+              coverSrc="https://books.google.com/books/content?id=bmxV0AEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api"
             />
             <BookSpine
               tone="green"

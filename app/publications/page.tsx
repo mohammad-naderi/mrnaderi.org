@@ -97,6 +97,7 @@ export default function PublicationsPage() {
               title="Badiou, Infinity, and Subjectivity"
               description="A sustained reading of the relation among infinity, formalism, and subjectivity in Alain Badiou's philosophy."
               href="https://www.bloomsbury.com/us/badiou-infinity-and-subjectivity-9781666931044/"
+              coverSrc="https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360%2Cc_scale%2Cdpr_1.5/jackets/9781666931051.jpg"
             />
             <BookSpine
               tone="blue"
@@ -104,6 +105,7 @@ export default function PublicationsPage() {
               title="Philosophy after Lacan"
               description="A collection examining the philosophical consequences of Lacanian thought and its continuing conceptual force."
               href="https://www.routledge.com/Philosophy-After-Lacan-Politics-Science-and-Art/Taheri-Vanderwees-Naderi/p/book/9781032546452"
+              coverSrc="https://books.google.com/books/content?id=bmxV0AEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api"
             />
             <BookSpine
               tone="red"
@@ -111,6 +113,7 @@ export default function PublicationsPage() {
               title="Atlas de Política Experimental"
               description="A substantially revised and expanded Portuguese-language edition of Atlas of Experimental Politics, collectively written by the Subconjunto de Prática Teórica. My contribution, ‘The Discipline of Politics,’ was rewritten for this volume."
               href="https://www.glacedicoes.com/product-page/atlas-de-politica-experimental-subconjunto-de-pratica-teorica"
+              coverSrc="https://static.wixstatic.com/media/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png/v1/fill/w_1575%2Ch_1575%2Cal_c%2Cq_95%2Cenc_avif%2Cquality_auto/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png"
             />
             <BookSpine
               tone="green"

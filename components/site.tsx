@@ -9,10 +9,13 @@ const nav = [
   ["About", "/about"],
 ];
 
-export function SiteHeader() {
+export function SiteHeader({ showSubscribe = false }: { showSubscribe?: boolean }) {
   return (
     <header className="site-header">
-      <div className="shell header-inner">
+      <div
+        className="shell header-inner"
+        style={{ gridTemplateColumns: showSubscribe ? "1fr auto auto" : "1fr auto" }}
+      >
         <Link className="wordmark" href="/" aria-label="Mohammad Reza Naderi home">
           <span className="wordmark-name">Mohammad Reza Naderi</span>
         </Link>
@@ -23,9 +26,11 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link className="subscribe-button" href="/writing#subscribe">
-          Subscribe
-        </Link>
+        {showSubscribe ? (
+          <a className="subscribe-button" href="https://mrnaderi.substack.com/subscribe">
+            Subscribe
+          </a>
+        ) : null}
       </div>
     </header>
   );
@@ -77,6 +82,7 @@ export function BookSpine({
   description,
   tone,
   href,
+  coverSrc,
 }: {
   title: string;
   subtitle?: string;
@@ -84,12 +90,28 @@ export function BookSpine({
   description: string;
   tone: "ink" | "blue" | "green" | "red";
   href?: string;
+  coverSrc?: string;
 }) {
   const book = (
     <article className="book-item">
-      <div className={`book-cover ${tone}`} aria-hidden="true">
-        <span>Mohammad Reza Naderi</span>
-        <strong>{title}</strong>
+      <div
+        className={`book-cover ${tone}`}
+        aria-hidden="true"
+        style={coverSrc ? { padding: 0, overflow: "hidden", background: "transparent" } : undefined}
+      >
+        {coverSrc ? (
+          <img
+            src={coverSrc}
+            alt=""
+            loading="lazy"
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          />
+        ) : (
+          <>
+            <span>Mohammad Reza Naderi</span>
+            <strong>{title}</strong>
+          </>
+        )}
       </div>
       <div className="book-copy">
         <p>{status}</p>

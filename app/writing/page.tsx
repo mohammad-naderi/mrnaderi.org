@@ -39,7 +39,7 @@ const essays = [
 export default function WritingPage() {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader showSubscribe />
       <main>
         <PageIntro eyebrow="Writing" title="Short philosophy with a public life." />
 
@@ -47,8 +47,8 @@ export default function WritingPage() {
           <p>
             Notes and complete interventions emerging from current research: more
             concentrated than a chapter, more developed than a private notebook
-            entry, and published when the work produces them. These pieces will
-            also appear through Substack once the publication is opened.
+            entry, and published when the work produces them. Published pieces also
+            appear through Substack.
           </p>
         </section>
 
