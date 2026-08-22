@@ -97,21 +97,14 @@ export function BookSpine({
       <div
         className={`book-cover ${tone}`}
         aria-hidden="true"
-        style={coverSrc ? { padding: 0, overflow: "hidden", background: "#ffffff" } : undefined}
+        style={coverSrc ? { padding: 0, overflow: "hidden", background: "transparent" } : undefined}
       >
         {coverSrc ? (
           <img
             src={coverSrc}
             alt=""
             loading="lazy"
-            style={{
-  width: "100%",
-  height: "100%",
-  objectFit: "contain",
-  objectPosition: "center",
-  display: "block",
-  background: "#fff",
-}}
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
           />
         ) : (
           <>
