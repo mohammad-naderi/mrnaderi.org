@@ -143,14 +143,6 @@ export default function PublicationsPage() {
             ))}
           </div>
         </section>
-
-        <section className="record-note shell">
-          <p>
-            This record is being reconciled with the new public intellectual CV.
-            Publisher and journal links are included wherever a stable public
-            source is available.
-          </p>
-        </section>
       </main>
       <SiteFooter />
     </>
