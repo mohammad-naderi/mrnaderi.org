@@ -97,7 +97,7 @@ export default function PublicationsPage() {
               title="Badiou, Infinity, and Subjectivity"
               description="A sustained reading of the relation among infinity, formalism, and subjectivity in Alain Badiou's philosophy."
               href="https://www.bloomsbury.com/us/badiou-infinity-and-subjectivity-9781666931044/"
-              coverSrc="https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360%2Cc_scale%2Cdpr_1.5/jackets/9781666931051.jpg"
+              coverSrc="/badiou-infinity-and-subjectivity.jpg"
             />
             <BookSpine
               tone="blue"
@@ -113,7 +113,7 @@ export default function PublicationsPage() {
               title="Atlas de Política Experimental"
               description="A substantially revised and expanded Portuguese-language edition of Atlas of Experimental Politics, collectively written by the Subconjunto de Prática Teórica. My contribution, ‘The Discipline of Politics,’ was rewritten for this volume."
               href="https://www.glacedicoes.com/product-page/atlas-de-politica-experimental-subconjunto-de-pratica-teorica"
-              coverSrc="https://static.wixstatic.com/media/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png/v1/fill/w_1575%2Ch_1575%2Cal_c%2Cq_95%2Cenc_avif%2Cquality_auto/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png"
+              coverSrc="/atlas-de-politica-experimental.jpg"
             />
             <BookSpine
               tone="green"
