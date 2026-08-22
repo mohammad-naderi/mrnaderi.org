@@ -12,12 +12,13 @@ export default function AboutPage() {
         <section className="about-main shell">
           <figure>
             <Image
-              src="/profile-photo.jpg"
+              src="/profile-photo-4x5.jpg"
               alt="Mohammad Reza Naderi"
-              width={1235}
+              width={977}
               height={1221}
               sizes="(max-width: 760px) calc(100vw - 38px), 40vw"
               unoptimized
+              style={{ objectFit: "cover", objectPosition: "center", transform: "none" }}
             />
           </figure>
           <div className="about-prose">

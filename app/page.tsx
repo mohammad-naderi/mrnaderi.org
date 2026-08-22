@@ -46,13 +46,14 @@ export default function Home() {
 
           <figure className="portrait-frame">
             <Image
-              src="/profile-photo.jpg"
+              src="/profile-photo-4x5.jpg"
               alt="Portrait of Mohammad Reza Naderi against cedar foliage"
-              width={1235}
+              width={977}
               height={1221}
               sizes="(max-width: 760px) calc(100vw - 38px), (max-width: 1180px) 38vw, 470px"
               priority
               unoptimized
+              style={{ objectFit: "cover", objectPosition: "center", transform: "none" }}
             />
           </figure>
         </section>
