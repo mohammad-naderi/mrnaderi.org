@@ -27,7 +27,7 @@ const notes = [
 const homeBooks = [
   {
     title: "Badiou, Infinity, and Subjectivity",
-    coverSrc: "https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360%2Cc_scale%2Cdpr_1.5/jackets/9781666931051.jpg",
+    coverSrc: "/badiou-infinity-and-subjectivity.jpg",
   },
   {
     title: "Philosophy After Lacan",
@@ -35,7 +35,7 @@ const homeBooks = [
   },
   {
     title: "Atlas de Política Experimental",
-    coverSrc: "https://static.wixstatic.com/media/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png/v1/fill/w_1575%2Ch_1575%2Cal_c%2Cq_95%2Cenc_avif%2Cquality_auto/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png",
+    coverSrc: "/atlas-de-politica-experimental.jpg",
   },
 ];
 
