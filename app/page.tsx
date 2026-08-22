@@ -46,10 +46,10 @@ export default function Home() {
 
           <figure className="portrait-frame">
             <Image
-              src="/reza-naderi-portrait-31649-retouched.png"
+              src="/profile-photo.jpg"
               alt="Portrait of Mohammad Reza Naderi against cedar foliage"
-              width={1152}
-              height={1536}
+              width={1235}
+              height={1221}
               sizes="(max-width: 760px) calc(100vw - 38px), (max-width: 1180px) 38vw, 470px"
               priority
               unoptimized

@@ -12,10 +12,10 @@ export default function AboutPage() {
         <section className="about-main shell">
           <figure>
             <Image
-              src="/reza-naderi-portrait-31649-retouched.png"
+              src="/profile-photo.jpg"
               alt="Mohammad Reza Naderi"
-              width={1152}
-              height={1536}
+              width={1235}
+              height={1221}
               sizes="(max-width: 760px) calc(100vw - 38px), 40vw"
               unoptimized
             />
