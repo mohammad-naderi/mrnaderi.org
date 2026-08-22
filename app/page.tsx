@@ -109,6 +109,14 @@ export default function Home() {
               coverSrc="/philosophy-after-lacan.jpg"
             />
             <BookSpine
+              tone="red"
+              status="GLAC Edições · 2026 · Co-author"
+              title="Atlas de Política Experimental"
+              description="A substantially revised and expanded Portuguese-language edition of Atlas of Experimental Politics, collectively written by the Subconjunto de Prática Teórica. My contribution, ‘The Discipline of Politics,’ was rewritten for this volume."
+              href="https://www.glacedicoes.com/product-page/atlas-de-politica-experimental-subconjunto-de-pratica-teorica"
+              coverSrc="https://static.wixstatic.com/media/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png/v1/fill/w_1575%2Ch_1575%2Cal_c%2Cq_95%2Cenc_avif%2Cquality_auto/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png"
+            />
+            <BookSpine
               tone="green"
               status="Bloomsbury Academic · Forthcoming 2027"
               title="Badiou and Disciplinary Truths"
