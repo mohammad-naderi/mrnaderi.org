@@ -11,9 +11,6 @@ export const metadata: Metadata = {
   },
   description:
     "The philosophical work, publications, seminars, and current writing of Mohammad Reza Naderi.",
-  other: {
-    "codex-preview": "development",
-  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
