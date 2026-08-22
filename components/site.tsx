@@ -97,7 +97,7 @@ export function BookSpine({
       <div
         className={`book-cover ${tone}`}
         aria-hidden="true"
-        style={coverSrc ? { padding: 0, overflow: "hidden", background: "transparent" } : undefined}
+        style={coverSrc ? { padding: 0, overflow: "hidden", background: "#ffffff" } : undefined}
       >
         {coverSrc ? (
           <img
