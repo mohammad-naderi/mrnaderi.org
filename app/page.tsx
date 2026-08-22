@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BookSpine, SiteFooter, SiteHeader } from "@/components/site";
+import { SiteFooter, SiteHeader } from "@/components/site";
 
 const notes = [
   {
@@ -21,6 +21,21 @@ const notes = [
     tag: "Politics · Diagnosis",
     title: "The Present Made Permanent",
     text: "The recurrent enemy of novelty is naturalization: the transformation of a contingent arrangement into the horizon of the possible. Even thinking that denaturalizes one order can reproduce the same error elsewhere.",
+  },
+];
+
+const homeBooks = [
+  {
+    title: "Badiou, Infinity, and Subjectivity",
+    coverSrc: "https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360%2Cc_scale%2Cdpr_1.5/jackets/9781666931051.jpg",
+  },
+  {
+    title: "Philosophy After Lacan",
+    coverSrc: "/philosophy-after-lacan.jpg",
+  },
+  {
+    title: "Atlas de Política Experimental",
+    coverSrc: "https://static.wixstatic.com/media/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png/v1/fill/w_1575%2Ch_1575%2Cal_c%2Cq_95%2Cenc_avif%2Cquality_auto/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png",
   },
 ];
 
@@ -89,41 +104,27 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="book-grid">
-            <BookSpine
-              tone="ink"
-              status="Lexington Books · 2023"
-              title="Badiou, Infinity, and Subjectivity"
-              subtitle="Reading Hegel and Lacan after Badiou"
-              description="A study of the unity of Badiou’s intellectual development through axiomatic thought, mathematical infinity, and the emergence of the Theory of Discipline."
-              href="https://www.bloomsbury.com/us/badiou-infinity-and-subjectivity-9781666931044/"
-              coverSrc="https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360%2Cc_scale%2Cdpr_1.5/jackets/9781666931051.jpg"
-            />
-            <BookSpine
-              tone="blue"
-              status="Routledge · 2024 · Co-editor"
-              title="Philosophy After Lacan"
-              subtitle="Politics, Science, and Art"
-              description="A co-edited collection on the philosophical consequences of Lacanian thought in politics, science, and art."
-              href="https://www.routledge.com/Philosophy-After-Lacan-Politics-Science-and-Art/Taheri-Vanderwees-Naderi/p/book/9781032546452"
-              coverSrc="/philosophy-after-lacan.jpg"
-            />
-            <BookSpine
-              tone="red"
-              status="GLAC Edições · 2026 · Co-author"
-              title="Atlas de Política Experimental"
-              description="A substantially revised and expanded Portuguese-language edition of Atlas of Experimental Politics, collectively written by the Subconjunto de Prática Teórica. My contribution, ‘The Discipline of Politics,’ was rewritten for this volume."
-              href="https://www.glacedicoes.com/product-page/atlas-de-politica-experimental-subconjunto-de-pratica-teorica"
-              coverSrc="https://static.wixstatic.com/media/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png/v1/fill/w_1575%2Ch_1575%2Cal_c%2Cq_95%2Cenc_avif%2Cquality_auto/bddb27_9fbfb6ede621411ea6d2266f67ba6252~mv2.png"
-            />
-            <BookSpine
-              tone="green"
-              status="Bloomsbury Academic · Forthcoming 2027"
-              title="Badiou and Disciplinary Truths"
-              subtitle="A Companion to The Immanence of Truths"
-              description="A companion to The Immanence of Truths that develops a systematic account of the Theory of Discipline."
-              href="https://www.bloomsbury.com/us/badiou-and-disciplinary-truths-9781350555440/"
-            />
+          <div className="home-book-shelf">
+            {homeBooks.map((book) => (
+              <Link
+                className="home-book-cover-link"
+                href="/publications"
+                key={book.title}
+                aria-label={`${book.title} — view publications`}
+              >
+                <img src={book.coverSrc} alt={book.title} loading="lazy" />
+              </Link>
+            ))}
+            <Link
+              className="home-book-cover-link"
+              href="/publications"
+              aria-label="Badiou and Disciplinary Truths — view publications"
+            >
+              <div className="home-book-placeholder" aria-hidden="true">
+                <span>Mohammad Reza Naderi</span>
+                <strong>Badiou and Disciplinary Truths</strong>
+              </div>
+            </Link>
           </div>
         </section>
 
