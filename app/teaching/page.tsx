@@ -8,6 +8,7 @@ type Session = {
   date: string;
   type: string;
   title: string;
+  subtitle?: string;
   series: string;
   readHref?: string;
   courseHref?: string;
@@ -35,10 +36,20 @@ const sessions: Session[] = [
       "https://torontopsychoanalysis.com/extension-program/course-thirteen-adventures-in-french-structuralism/",
   },
   {
-    date: "8 & 22 May 2026",
-    type: "Talks",
+    date: "8 May 2026",
+    type: "Talk",
     title: "Dark Enlightenment",
-    series: "Two-session invited presentation",
+    subtitle: "From Acceleration to Control: How Dark Enlightenment Emerges from “the Left”",
+    series: "Invited talk · Part I",
+    readHref: "/teaching/dark-enlightenment-from-acceleration-to-control",
+  },
+  {
+    date: "22 May 2026",
+    type: "Talk",
+    title: "Dark Enlightenment",
+    subtitle: "Accelerationism and the Collapse of Transition",
+    series: "Invited talk · Part II",
+    readHref: "/teaching/dark-enlightenment-collapse-of-transition",
   },
   {
     date: "Nov–Dec 2025",
@@ -108,12 +119,26 @@ export default function TeachingPage() {
                 session.watchTwoHref;
 
               return (
-                <article key={session.title}>
+                <article key={`${session.date}-${session.title}-${session.subtitle ?? ""}`}>
                   <div>
                     <span>{session.date}</span>
                     <span>{session.type}</span>
                   </div>
                   <h3>{session.title}</h3>
+                  {session.subtitle ? (
+                    <p
+                      style={{
+                        marginTop: "-4px",
+                        marginBottom: "10px",
+                        color: "var(--ink)",
+                        fontFamily: "Georgia, serif",
+                        fontSize: "17px",
+                        lineHeight: 1.45,
+                      }}
+                    >
+                      {session.subtitle}
+                    </p>
+                  ) : null}
                   <p>{session.series}</p>
                   {hasActions ? (
                     <div
@@ -128,7 +153,7 @@ export default function TeachingPage() {
                     >
                       {session.readHref ? (
                         <Link href={session.readHref} style={actionStyle}>
-                          Read {session.type === "Seminar" ? "seminar" : "text"} →
+                          Read {session.type === "Seminar" ? "seminar" : session.type === "Talk" ? "talk" : "text"} →
                         </Link>
                       ) : null}
                       {session.courseHref ? (
