@@ -3,6 +3,7 @@ import "./globals.css";
 import "./home-refinement.css";
 import "./philosophy-refinement.css";
 import "./interior-refinement.css";
+import "./seminar.css";
 
 export const metadata: Metadata = {
   title: {
