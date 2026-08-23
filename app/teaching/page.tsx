@@ -1,26 +1,49 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageIntro, SiteFooter, SiteHeader } from "@/components/site";
 
 export const metadata: Metadata = { title: "Teaching & Talks" };
 
-const sessions = [
+type Session = {
+  date: string;
+  type: string;
+  title: string;
+  series: string;
+  readHref?: string;
+  courseHref?: string;
+};
+
+const sessions: Session[] = [
   {
     date: "16 Apr 2026",
     type: "Seminar",
     title: "Meaning, Structure, and the Problem of Determination",
-    series: "Adventures of French Structuralism · TPS&I",
+    series: "Adventures of French Structuralism · Toronto Psychoanalytic Society & Institute",
+    readHref: "/teaching/meaning-structure-determination",
+    courseHref:
+      "https://torontopsychoanalysis.com/extension-program/course-thirteen-adventures-in-french-structuralism/",
   },
   {
     date: "22 Apr 2026",
     type: "Seminar",
     title: "From Structuralism to Process: Deleuze, Anti-Oedipus, and the Problem of Novelty",
-    series: "Adventures of French Structuralism · TPS&I",
+    series: "Adventures of French Structuralism · Toronto Psychoanalytic Society & Institute",
+    courseHref:
+      "https://torontopsychoanalysis.com/extension-program/course-thirteen-adventures-in-french-structuralism/",
   },
   {
     date: "8 & 22 May 2026",
     type: "Talks",
     title: "Dark Enlightenment",
     series: "Two-session invited presentation",
+  },
+  {
+    date: "Nov–Dec 2025",
+    type: "Course",
+    title: "Clinical Lacan: Painful Loves",
+    series: "Toronto Psychoanalytic Society & Institute · Extension Program",
+    courseHref:
+      "https://torontopsychoanalysis.com/extension-program/course-five-clinical-lacan-painful-loves/",
   },
   {
     date: "September 2019",
@@ -45,9 +68,10 @@ export default function TeachingPage() {
 
         <section className="page-description shell">
           <p>
-            Selected teaching, seminars, and talks. Recordings, transcripts, and
-            related materials will be linked here where available; selected
-            transcripts will also be published on Substack.
+            Selected teaching, seminars, and talks. Written seminar texts,
+            recordings, and related materials are linked here where available.
+            Institutional course pages are included selectively as a record of
+            the occasion on which the work was presented.
           </p>
         </section>
 
@@ -61,6 +85,16 @@ export default function TeachingPage() {
                 </div>
                 <h3>{session.title}</h3>
                 <p>{session.series}</p>
+                {session.readHref || session.courseHref ? (
+                  <div className="session-actions">
+                    {session.readHref ? (
+                      <Link href={session.readHref}>Read seminar →</Link>
+                    ) : null}
+                    {session.courseHref ? (
+                      <a href={session.courseHref}>Course page ↗</a>
+                    ) : null}
+                  </div>
+                ) : null}
               </article>
             ))}
           </div>
