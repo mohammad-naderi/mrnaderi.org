@@ -11,12 +11,15 @@ type Session = {
   series: string;
   readHref?: string;
   courseHref?: string;
+  eventHref?: string;
+  watchOneHref?: string;
+  watchTwoHref?: string;
 };
 
 const sessions: Session[] = [
   {
     date: "16 Apr 2026",
-    type: "Seminar",
+    type: "Course",
     title: "Meaning, Structure, and the Problem of Determination",
     series: "Adventures of French Structuralism · Toronto Psychoanalytic Society & Institute",
     readHref: "/teaching/meaning-structure-determination",
@@ -25,7 +28,7 @@ const sessions: Session[] = [
   },
   {
     date: "22 Apr 2026",
-    type: "Seminar",
+    type: "Course",
     title: "From Structuralism to Process: Deleuze, Anti-Oedipus, and the Problem of Novelty",
     series: "Adventures of French Structuralism · Toronto Psychoanalytic Society & Institute",
     courseHref:
@@ -46,10 +49,16 @@ const sessions: Session[] = [
       "https://torontopsychoanalysis.com/extension-program/course-five-clinical-lacan-painful-loves/",
   },
   {
-    date: "September 2019",
-    type: "Presentation",
+    date: "12 Sep 2019",
+    type: "Seminar",
     title: "The Unconscious Materialism of Hegel",
-    series: "Dialectic Returns · Prague",
+    series: "Dialectics Returns · International Workshop on Dialectics · Prague",
+    readHref: "/teaching/unconscious-materialism-hegel",
+    eventHref: "https://suturepress.com/prague-axiomatic-circle/dialectics-returns",
+    watchOneHref:
+      "https://www.youtube.com/watch?v=-D3DjWIiR6U&list=PLDTspDPCczZy5s87SEO8MwXZ8LwTQoy1N&index=8",
+    watchTwoHref:
+      "https://www.youtube.com/watch?v=Z8sLTsAJvW0&list=PLDTspDPCczZy5s87SEO8MwXZ8LwTQoy1N&index=10",
   },
   {
     date: "Ten years",
@@ -90,38 +99,63 @@ export default function TeachingPage() {
           style={{ gridTemplateColumns: "1fr", maxWidth: "920px" }}
         >
           <div className="session-list">
-            {sessions.map((session) => (
-              <article key={session.title}>
-                <div>
-                  <span>{session.date}</span>
-                  <span>{session.type}</span>
-                </div>
-                <h3>{session.title}</h3>
-                <p>{session.series}</p>
-                {session.readHref || session.courseHref ? (
-                  <div
-                    className="session-actions"
-                    style={{
-                      justifyContent: "flex-start",
-                      gap: "24px",
-                      marginTop: "18px",
-                      color: "var(--ink)",
-                    }}
-                  >
-                    {session.readHref ? (
-                      <Link href={session.readHref} style={actionStyle}>
-                        Read seminar →
-                      </Link>
-                    ) : null}
-                    {session.courseHref ? (
-                      <a href={session.courseHref} style={actionStyle}>
-                        Course page ↗
-                      </a>
-                    ) : null}
+            {sessions.map((session) => {
+              const hasActions =
+                session.readHref ||
+                session.courseHref ||
+                session.eventHref ||
+                session.watchOneHref ||
+                session.watchTwoHref;
+
+              return (
+                <article key={session.title}>
+                  <div>
+                    <span>{session.date}</span>
+                    <span>{session.type}</span>
                   </div>
-                ) : null}
-              </article>
-            ))}
+                  <h3>{session.title}</h3>
+                  <p>{session.series}</p>
+                  {hasActions ? (
+                    <div
+                      className="session-actions"
+                      style={{
+                        justifyContent: "flex-start",
+                        gap: "24px",
+                        marginTop: "18px",
+                        color: "var(--ink)",
+                        flexWrap: "wrap",
+                      }}
+                    >
+                      {session.readHref ? (
+                        <Link href={session.readHref} style={actionStyle}>
+                          Read {session.type === "Seminar" ? "seminar" : "text"} →
+                        </Link>
+                      ) : null}
+                      {session.courseHref ? (
+                        <a href={session.courseHref} style={actionStyle}>
+                          Course page ↗
+                        </a>
+                      ) : null}
+                      {session.eventHref ? (
+                        <a href={session.eventHref} style={actionStyle}>
+                          Workshop page ↗
+                        </a>
+                      ) : null}
+                      {session.watchOneHref ? (
+                        <a href={session.watchOneHref} style={actionStyle}>
+                          Watch Part I ↗
+                        </a>
+                      ) : null}
+                      {session.watchTwoHref ? (
+                        <a href={session.watchTwoHref} style={actionStyle}>
+                          Watch Part II ↗
+                        </a>
+                      ) : null}
+                    </div>
+                  ) : null}
+                </article>
+              );
+            })}
           </div>
         </section>
       </main>
