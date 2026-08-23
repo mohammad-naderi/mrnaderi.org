@@ -59,6 +59,16 @@ const sessions: Session[] = [
   },
 ];
 
+const actionStyle = {
+  borderBottom: "1px solid #9b9e97",
+  paddingBottom: "4px",
+  color: "var(--ink)",
+  fontSize: "10px",
+  fontWeight: 700,
+  letterSpacing: ".08em",
+  textTransform: "uppercase" as const,
+};
+
 export default function TeachingPage() {
   return (
     <>
@@ -75,7 +85,10 @@ export default function TeachingPage() {
           </p>
         </section>
 
-        <section className="teaching-section content-section shell">
+        <section
+          className="teaching-section content-section shell"
+          style={{ gridTemplateColumns: "1fr", maxWidth: "920px" }}
+        >
           <div className="session-list">
             {sessions.map((session) => (
               <article key={session.title}>
@@ -86,12 +99,24 @@ export default function TeachingPage() {
                 <h3>{session.title}</h3>
                 <p>{session.series}</p>
                 {session.readHref || session.courseHref ? (
-                  <div className="session-actions">
+                  <div
+                    className="session-actions"
+                    style={{
+                      justifyContent: "flex-start",
+                      gap: "24px",
+                      marginTop: "18px",
+                      color: "var(--ink)",
+                    }}
+                  >
                     {session.readHref ? (
-                      <Link href={session.readHref}>Read seminar →</Link>
+                      <Link href={session.readHref} style={actionStyle}>
+                        Read seminar →
+                      </Link>
                     ) : null}
                     {session.courseHref ? (
-                      <a href={session.courseHref}>Course page ↗</a>
+                      <a href={session.courseHref} style={actionStyle}>
+                        Course page ↗
+                      </a>
                     ) : null}
                   </div>
                 ) : null}
