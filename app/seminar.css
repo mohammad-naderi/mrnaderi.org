@@ -1,0 +1,149 @@
+.seminar-header {
+  padding-block: 60px 52px;
+  border-bottom: 1px solid var(--line);
+}
+
+.seminar-back {
+  display: inline-block;
+  margin-bottom: 34px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: .05em;
+}
+
+.seminar-back:hover { color: var(--blue); }
+
+.seminar-header .eyebrow { margin-bottom: 18px; }
+
+.seminar-header h1 {
+  max-width: 780px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(46px, 5vw, 68px);
+  font-weight: 400;
+  letter-spacing: -.04em;
+  line-height: 1.02;
+}
+
+.seminar-subtitle {
+  max-width: 760px;
+  margin-top: 20px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+.seminar-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.seminar-meta a {
+  border-bottom: 1px solid #9b9e97;
+  padding-bottom: 3px;
+}
+
+.seminar-layout {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 64px;
+  align-items: start;
+  padding-block: 58px 100px;
+}
+
+.seminar-toc {
+  position: sticky;
+  top: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.seminar-toc > p {
+  margin-bottom: 6px;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.seminar-toc a {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.seminar-toc a:hover { color: var(--blue); }
+
+.seminar-prose {
+  min-width: 0;
+  max-width: 656px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.78;
+}
+
+.seminar-prose section { scroll-margin-top: 30px; }
+.seminar-prose section + section { margin-top: 58px; }
+
+.seminar-prose h2 {
+  margin: 0 0 24px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -.025em;
+  line-height: 1.18;
+}
+
+.seminar-prose p {
+  margin: 0 0 20px;
+  color: #454d48;
+}
+
+.seminar-prose ul {
+  margin: 0 0 22px;
+  padding-left: 24px;
+  color: #454d48;
+}
+
+.seminar-prose li + li { margin-top: 7px; }
+
+.seminar-bullet {
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+
+.seminar-bullet::before { content: "• "; }
+
+@media (max-width: 760px) {
+  .seminar-header { padding-block: 42px 38px; }
+  .seminar-back { margin-bottom: 26px; }
+  .seminar-header h1 { font-size: clamp(40px, 12vw, 56px); }
+  .seminar-subtitle { font-size: 20px; }
+  .seminar-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-block: 40px 70px;
+  }
+  .seminar-toc {
+    position: static;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+  }
+  .seminar-prose {
+    max-width: none;
+    font-size: 17px;
+    line-height: 1.72;
+  }
+  .seminar-prose section + section { margin-top: 46px; }
+  .seminar-prose h2 { font-size: 28px; }
+}
