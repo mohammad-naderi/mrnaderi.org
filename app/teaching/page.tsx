@@ -12,6 +12,7 @@ type Session = {
   series: string;
   readHref?: string;
   notesHref?: string;
+  notesLabel?: string;
   courseHref?: string;
   eventHref?: string;
   watchOneHref?: string;
@@ -26,6 +27,7 @@ const sessions: Session[] = [
     series: "Adventures of French Structuralism · Toronto Psychoanalytic Society & Institute",
     readHref: "/teaching/meaning-structure-determination",
     notesHref: "/teaching/reading-deleuze-structuralism",
+    notesLabel: "Companion to Deleuze’s “How Do We Recognize Structuralism?” →",
     courseHref:
       "https://torontopsychoanalysis.com/extension-program/course-thirteen-adventures-in-french-structuralism/",
   },
@@ -161,7 +163,7 @@ export default function TeachingPage() {
                       ) : null}
                       {session.notesHref ? (
                         <Link href={session.notesHref} style={actionStyle}>
-                          Course notes →
+                          {session.notesLabel ?? "Course notes →"}
                         </Link>
                       ) : null}
                       {session.courseHref ? (
