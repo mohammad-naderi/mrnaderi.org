@@ -98,6 +98,8 @@ export default function PublicationsPage() {
               description="A sustained reading of the relation among infinity, formalism, and subjectivity in Alain Badiou's philosophy."
               href="https://www.bloomsbury.com/us/badiou-infinity-and-subjectivity-9781666931044/"
               coverSrc="/badiou-infinity-and-subjectivity.jpg"
+              reviewHref="https://www.radicalphilosophy.com/reviews/the-consequences-of-infinity"
+              reviewLabel="Review: The consequences of infinity · Radical Philosophy"
             />
             <BookSpine
               tone="blue"
