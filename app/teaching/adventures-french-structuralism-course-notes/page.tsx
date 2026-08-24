@@ -46,6 +46,10 @@ const toc = [
   ["beyond-structure", "Beyond Structure"],
   ["theory-discipline", "Theory of Discipline"],
   ["appendix", "Appendix"],
+  ["appendix-form-truth-fidelity", "1. Form, Truth, and Fidelity"],
+  ["appendix-taboo-axiom", "2. From Taboo to Axiom"],
+  ["deleuze-structuralist-condition", "3. Deleuze and Structuralist Condition"],
+  ["hallward-badiou", "4. About French Epistemology — Hallward/Badiou"],
 ];
 
 export default function StructuralismCourseNotesPage() {
