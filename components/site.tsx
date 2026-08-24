@@ -71,6 +71,13 @@ export function SiteHeader({ showSubscribe = false }: { showSubscribe?: boolean 
         }
 
         @media (max-width: 1050px) {
+          .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--cream);
+          }
+
           .mobile-menu {
             position: relative;
             display: block;
