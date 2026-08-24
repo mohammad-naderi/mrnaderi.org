@@ -186,16 +186,6 @@ export default function TeachingPage() {
                             Workshop page ↗
                           </a>
                         ) : null}
-                        {session.watchOneHref ? (
-                          <a href={session.watchOneHref} style={actionStyle}>
-                            Watch Part I ↗
-                          </a>
-                        ) : null}
-                        {session.watchTwoHref ? (
-                          <a href={session.watchTwoHref} style={actionStyle}>
-                            Watch Part II ↗
-                          </a>
-                        ) : null}
                       </div>
 
                       {session.companionHref ? (
@@ -203,6 +193,21 @@ export default function TeachingPage() {
                           <Link href={session.companionHref} style={actionStyle}>
                             Companion to Deleuze’s “How Do We Recognize Structuralism?” →
                           </Link>
+                        </div>
+                      ) : null}
+
+                      {session.watchOneHref || session.watchTwoHref ? (
+                        <div style={actionRowStyle}>
+                          {session.watchOneHref ? (
+                            <a href={session.watchOneHref} style={actionStyle}>
+                              Watch Part I ↗
+                            </a>
+                          ) : null}
+                          {session.watchTwoHref ? (
+                            <a href={session.watchTwoHref} style={actionStyle}>
+                              Watch Part II ↗
+                            </a>
+                          ) : null}
                         </div>
                       ) : null}
                     </div>
