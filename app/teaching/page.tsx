@@ -11,6 +11,7 @@ type Session = {
   subtitle?: string;
   series: string;
   readHref?: string;
+  notesHref?: string;
   courseHref?: string;
   eventHref?: string;
   watchOneHref?: string;
@@ -24,6 +25,7 @@ const sessions: Session[] = [
     title: "Meaning, Structure, and the Problem of Determination",
     series: "Adventures of French Structuralism · Toronto Psychoanalytic Society & Institute",
     readHref: "/teaching/meaning-structure-determination",
+    notesHref: "/teaching/reading-deleuze-structuralism",
     courseHref:
       "https://torontopsychoanalysis.com/extension-program/course-thirteen-adventures-in-french-structuralism/",
   },
@@ -113,6 +115,7 @@ export default function TeachingPage() {
             {sessions.map((session) => {
               const hasActions =
                 session.readHref ||
+                session.notesHref ||
                 session.courseHref ||
                 session.eventHref ||
                 session.watchOneHref ||
@@ -154,6 +157,11 @@ export default function TeachingPage() {
                       {session.readHref ? (
                         <Link href={session.readHref} style={actionStyle}>
                           Read {session.type === "Seminar" ? "seminar" : session.type === "Talk" ? "talk" : "text"} →
+                        </Link>
+                      ) : null}
+                      {session.notesHref ? (
+                        <Link href={session.notesHref} style={actionStyle}>
+                          Course notes →
                         </Link>
                       ) : null}
                       {session.courseHref ? (
