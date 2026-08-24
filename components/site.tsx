@@ -45,6 +45,24 @@ export function SiteHeader({ showSubscribe = false }: { showSubscribe?: boolean 
         ) : null}
       </div>
 
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            if (!window.__mrnMobileMenuCloseBound) {
+              document.addEventListener('click', function (event) {
+                const target = event.target;
+                if (!(target instanceof Element)) return;
+                const link = target.closest('.mobile-menu-nav a');
+                if (!link) return;
+                const menu = link.closest('details.mobile-menu');
+                if (menu) menu.removeAttribute('open');
+              });
+              window.__mrnMobileMenuCloseBound = true;
+            }
+          `,
+        }}
+      />
+
       <style>{`
         .mobile-menu {
           display: none;
