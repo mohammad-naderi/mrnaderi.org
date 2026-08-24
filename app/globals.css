@@ -292,10 +292,10 @@ p { margin: 0; }
 .book-item-link { display: block; }
 .book-item-link .book-item { transition: transform 180ms ease; }
 .book-item-link:hover .book-item { transform: translateY(-3px); }
-.book-copy > .book-link {
+.book-copy > .book-link,
+.book-links .book-link {
   display: block;
   width: max-content;
-  margin-top: 18px;
   border-bottom: 1px solid #9b9e97;
   padding-bottom: 4px;
   color: var(--ink);
@@ -305,6 +305,14 @@ p { margin: 0; }
   letter-spacing: .08em;
   line-height: 1.4;
   text-transform: uppercase;
+}
+.book-copy > .book-link { margin-top: 18px; }
+.book-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 18px;
 }
 
 .split-section {
