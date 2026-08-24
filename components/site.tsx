@@ -83,6 +83,8 @@ export function BookSpine({
   tone,
   href,
   coverSrc,
+  reviewHref,
+  reviewLabel,
 }: {
   title: string;
   subtitle?: string;
@@ -91,6 +93,8 @@ export function BookSpine({
   tone: "ink" | "blue" | "green" | "red";
   href?: string;
   coverSrc?: string;
+  reviewHref?: string;
+  reviewLabel?: string;
 }) {
   const book = (
     <article className="book-item">
@@ -118,10 +122,25 @@ export function BookSpine({
         <h3>{title}</h3>
         {subtitle ? <span className="book-subtitle">{subtitle}</span> : null}
         <span className="book-description">{description}</span>
-        {href ? <span className="book-link">Publisher details <span aria-hidden="true">↗</span></span> : null}
+        {reviewHref ? (
+          <div className="book-links">
+            {href ? (
+              <a className="book-link" href={href}>
+                Publisher details <span aria-hidden="true">↗</span>
+              </a>
+            ) : null}
+            <a className="book-link" href={reviewHref}>
+              {reviewLabel ?? "Review"} <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        ) : href ? (
+          <span className="book-link">Publisher details <span aria-hidden="true">↗</span></span>
+        ) : null}
       </div>
     </article>
   );
+
+  if (reviewHref) return book;
 
   return href ? (
     <a className="book-item-link" href={href}>
