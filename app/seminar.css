@@ -124,6 +124,111 @@
 
 .seminar-bullet::before { content: "• "; }
 
+.course-notes-prose h2 {
+  margin: 58px 0 24px;
+  scroll-margin-top: 30px;
+}
+
+.course-notes-prose > h2:first-of-type { margin-top: 0; }
+
+.course-notes-prose h3 {
+  margin: 48px 0 20px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: -.02em;
+  line-height: 1.22;
+  scroll-margin-top: 30px;
+}
+
+.course-notes-prose h4 {
+  margin: 34px 0 16px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.28;
+}
+
+.course-notes-prose h5 {
+  margin: 28px 0 14px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1.4;
+}
+
+.course-notes-prose ol {
+  margin: 0 0 22px;
+  padding-left: 28px;
+  color: #454d48;
+}
+
+.course-notes-prose li > p { margin-bottom: 8px; }
+
+.course-notes-prose blockquote {
+  margin: 28px 0;
+  padding-left: 22px;
+  border-left: 2px solid var(--line);
+}
+
+.course-notes-prose blockquote p {
+  color: #353d38;
+  font-size: 17px;
+  line-height: 1.72;
+}
+
+.course-notes-prose table {
+  width: 100%;
+  margin: 28px 0 34px;
+  border-collapse: collapse;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.course-notes-prose th,
+.course-notes-prose td {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+}
+
+.course-notes-prose th {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.course-notes-prose pre {
+  overflow-x: auto;
+  margin: 24px 0;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.28);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.course-notes-prose .footnote-ref,
+.course-notes-prose .footnote-back {
+  color: var(--blue);
+}
+
+.course-notes-prose .footnotes {
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.course-notes-prose .footnotes hr { display: none; }
+.course-notes-prose .footnotes li { margin-bottom: 10px; }
+
 @media (max-width: 760px) {
   .seminar-header { padding-block: 42px 38px; }
   .seminar-back { margin-bottom: 26px; }
@@ -146,4 +251,6 @@
   }
   .seminar-prose section + section { margin-top: 46px; }
   .seminar-prose h2 { font-size: 28px; }
+  .course-notes-prose h3 { font-size: 24px; }
+  .course-notes-prose table { display: block; overflow-x: auto; }
 }
