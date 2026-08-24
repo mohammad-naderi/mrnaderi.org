@@ -11,8 +11,8 @@ type Session = {
   subtitle?: string;
   series: string;
   readHref?: string;
-  notesHref?: string;
-  notesLabel?: string;
+  courseNotesHref?: string;
+  companionHref?: string;
   courseHref?: string;
   eventHref?: string;
   watchOneHref?: string;
@@ -25,17 +25,17 @@ const sessions: Session[] = [
     type: "Course",
     title: "Meaning, Structure, and the Problem of Determination",
     series: "Adventures of French Structuralism · Toronto Psychoanalytic Society & Institute",
-    readHref: "/teaching/meaning-structure-determination",
-    notesHref: "/teaching/reading-deleuze-structuralism",
-    notesLabel: "Companion to Deleuze’s “How Do We Recognize Structuralism?” →",
+    courseNotesHref: "/teaching/adventures-french-structuralism-course-notes",
+    companionHref: "/teaching/reading-deleuze-structuralism",
     courseHref:
       "https://torontopsychoanalysis.com/extension-program/course-thirteen-adventures-in-french-structuralism/",
   },
   {
     date: "22 Apr 2026",
     type: "Course",
-    title: "From Structuralism to Process: Deleuze, Anti-Oedipus, and the Problem of Novelty",
+    title: "From Structuralism to Deleuze: Determination, the Idea, and the Problem of Novelty",
     series: "Adventures of French Structuralism · Toronto Psychoanalytic Society & Institute",
+    readHref: "/teaching/meaning-structure-determination",
     courseHref:
       "https://torontopsychoanalysis.com/extension-program/course-thirteen-adventures-in-french-structuralism/",
   },
@@ -93,6 +93,13 @@ const actionStyle = {
   textTransform: "uppercase" as const,
 };
 
+const actionRowStyle = {
+  display: "flex",
+  justifyContent: "flex-start",
+  gap: "24px",
+  flexWrap: "wrap" as const,
+};
+
 export default function TeachingPage() {
   return (
     <>
@@ -117,7 +124,8 @@ export default function TeachingPage() {
             {sessions.map((session) => {
               const hasActions =
                 session.readHref ||
-                session.notesHref ||
+                session.courseNotesHref ||
+                session.companionHref ||
                 session.courseHref ||
                 session.eventHref ||
                 session.watchOneHref ||
@@ -149,42 +157,53 @@ export default function TeachingPage() {
                     <div
                       className="session-actions"
                       style={{
-                        justifyContent: "flex-start",
-                        gap: "24px",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "flex-start",
+                        gap: "12px",
                         marginTop: "18px",
                         color: "var(--ink)",
-                        flexWrap: "wrap",
                       }}
                     >
-                      {session.readHref ? (
-                        <Link href={session.readHref} style={actionStyle}>
-                          Read {session.type === "Seminar" ? "seminar" : session.type === "Talk" ? "talk" : "text"} →
-                        </Link>
-                      ) : null}
-                      {session.notesHref ? (
-                        <Link href={session.notesHref} style={actionStyle}>
-                          {session.notesLabel ?? "Course notes →"}
-                        </Link>
-                      ) : null}
-                      {session.courseHref ? (
-                        <a href={session.courseHref} style={actionStyle}>
-                          Course page ↗
-                        </a>
-                      ) : null}
-                      {session.eventHref ? (
-                        <a href={session.eventHref} style={actionStyle}>
-                          Workshop page ↗
-                        </a>
-                      ) : null}
-                      {session.watchOneHref ? (
-                        <a href={session.watchOneHref} style={actionStyle}>
-                          Watch Part I ↗
-                        </a>
-                      ) : null}
-                      {session.watchTwoHref ? (
-                        <a href={session.watchTwoHref} style={actionStyle}>
-                          Watch Part II ↗
-                        </a>
+                      <div style={actionRowStyle}>
+                        {session.readHref ? (
+                          <Link href={session.readHref} style={actionStyle}>
+                            Read {session.type === "Seminar" ? "seminar" : session.type === "Talk" ? "talk" : "text"} →
+                          </Link>
+                        ) : null}
+                        {session.courseNotesHref ? (
+                          <Link href={session.courseNotesHref} style={actionStyle}>
+                            Course notes →
+                          </Link>
+                        ) : null}
+                        {session.courseHref ? (
+                          <a href={session.courseHref} style={actionStyle}>
+                            Course page ↗
+                          </a>
+                        ) : null}
+                        {session.eventHref ? (
+                          <a href={session.eventHref} style={actionStyle}>
+                            Workshop page ↗
+                          </a>
+                        ) : null}
+                        {session.watchOneHref ? (
+                          <a href={session.watchOneHref} style={actionStyle}>
+                            Watch Part I ↗
+                          </a>
+                        ) : null}
+                        {session.watchTwoHref ? (
+                          <a href={session.watchTwoHref} style={actionStyle}>
+                            Watch Part II ↗
+                          </a>
+                        ) : null}
+                      </div>
+
+                      {session.companionHref ? (
+                        <div style={actionRowStyle}>
+                          <Link href={session.companionHref} style={actionStyle}>
+                            Companion to Deleuze’s “How Do We Recognize Structuralism?” →
+                          </Link>
+                        </div>
                       ) : null}
                     </div>
                   ) : null}
