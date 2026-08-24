@@ -26,12 +26,80 @@ export function SiteHeader({ showSubscribe = false }: { showSubscribe?: boolean 
             </Link>
           ))}
         </nav>
+
+        <details className="mobile-menu">
+          <summary>Menu</summary>
+          <nav className="mobile-menu-nav" aria-label="Mobile navigation">
+            {nav.map(([label, href]) => (
+              <Link href={href} key={href}>
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </details>
+
         {showSubscribe ? (
           <a className="subscribe-button" href="https://mrnaderi.substack.com/subscribe">
             Subscribe
           </a>
         ) : null}
       </div>
+
+      <style>{`
+        .mobile-menu {
+          display: none;
+        }
+
+        @media (max-width: 1050px) {
+          .mobile-menu {
+            position: relative;
+            display: block;
+            justify-self: end;
+          }
+
+          .mobile-menu summary {
+            cursor: pointer;
+            list-style: none;
+            border-bottom: 1px solid #8d918b;
+            padding: 8px 0 5px;
+            color: #3f4742;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+          }
+
+          .mobile-menu summary::-webkit-details-marker {
+            display: none;
+          }
+
+          .site-header .mobile-menu-nav {
+            position: absolute;
+            top: calc(100% + 14px);
+            right: 0;
+            z-index: 50;
+            display: grid;
+            min-width: 220px;
+            gap: 0;
+            border: 1px solid rgba(29, 36, 33, 0.18);
+            background: var(--paper);
+            box-shadow: 0 14px 30px rgba(29, 36, 33, 0.12);
+          }
+
+          .site-header .mobile-menu-nav a {
+            display: block;
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--line);
+            color: var(--ink);
+            font-size: 12px;
+            letter-spacing: .02em;
+          }
+
+          .site-header .mobile-menu-nav a:last-child {
+            border-bottom: 0;
+          }
+        }
+      `}</style>
     </header>
   );
 }
