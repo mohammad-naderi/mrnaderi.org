@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteFooter, SiteHeader } from "@/components/site";
 
 export const metadata: Metadata = {
-  title: "Meaning, Structure, and the Problem of Determination",
+  title: "From Structuralism to Deleuze: Determination, the Idea, and the Problem of Novelty",
 };
 
 const toc = [
@@ -26,7 +26,7 @@ export default function StructuralismSeminarPage() {
         <section className="seminar-header shell">
           <Link className="seminar-back" href="/teaching">← Teaching & Talks</Link>
           <p className="eyebrow">Seminar text</p>
-          <h1>Meaning, Structure, and the Problem of Determination</h1>
+          <h1>From Structuralism to Deleuze: Determination, the Idea, and the Problem of Novelty</h1>
           <div className="seminar-meta">
             <p>Seminar 1 · Adventures of French Structuralism</p>
             <p>Toronto Psychoanalytic Society & Institute · April 16, 2026</p>
