@@ -142,6 +142,27 @@ export default function SeminarLayout({ children }: { children: ReactNode }) {
           .seminar-prose li { font-size: 17px; line-height: 1.72; }
         }
       `}</style>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (() => {
+              const applyCourseContext = () => {
+                const header = document.querySelector('.seminar-page .seminar-header');
+                const eyebrow = header?.querySelector('.eyebrow');
+                const meta = header?.querySelectorAll('.seminar-meta p');
+                if (eyebrow) eyebrow.textContent = 'Course text';
+                if (meta && meta[0]) meta[0].textContent = 'Adventures of French Structuralism';
+                if (meta && meta[1]) meta[1].textContent = 'Toronto Psychoanalytic Society & Institute · April 22, 2026';
+              };
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', applyCourseContext, { once: true });
+              } else {
+                applyCourseContext();
+              }
+            })();
+          `,
+        }}
+      />
     </>
   );
 }
