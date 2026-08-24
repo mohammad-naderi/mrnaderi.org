@@ -52,10 +52,12 @@ export function SiteHeader({ showSubscribe = false }: { showSubscribe?: boolean 
               document.addEventListener('click', function (event) {
                 const target = event.target;
                 if (!(target instanceof Element)) return;
-                const link = target.closest('.mobile-menu-nav a');
-                if (!link) return;
-                const menu = link.closest('details.mobile-menu');
-                if (menu) menu.removeAttribute('open');
+                const navigationLink = target.closest('.mobile-menu-nav a');
+                const homeLink = target.closest('.site-header .wordmark');
+                if (!navigationLink && !homeLink) return;
+                document.querySelectorAll('details.mobile-menu[open]').forEach(function (menu) {
+                  menu.removeAttribute('open');
+                });
               });
               window.__mrnMobileMenuCloseBound = true;
             }
