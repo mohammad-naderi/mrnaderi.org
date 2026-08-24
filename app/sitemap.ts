@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/teaching",
     "/about",
     "/teaching/meaning-structure-determination",
+    "/teaching/reading-deleuze-structuralism",
     "/teaching/unconscious-materialism-hegel",
     "/teaching/dark-enlightenment-from-acceleration-to-control",
     "/teaching/dark-enlightenment-collapse-of-transition",
