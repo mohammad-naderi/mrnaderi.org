@@ -6,12 +6,16 @@ import "./interior-refinement.css";
 import "./seminar.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mrnaderi.org"),
   title: {
     default: "Mohammad Reza Naderi",
     template: "%s · Mohammad Reza Naderi",
   },
   description:
     "The philosophical work, publications, seminars, and current writing of Mohammad Reza Naderi.",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
