@@ -1,0 +1,117 @@
+/* Persian philosophy pages: preserve the approved philosophy layout while
+   giving the reading column a calm RTL typographic treatment. */
+
+.philosophy-language-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+}
+
+.philosophy-language-switch a {
+  color: var(--blue);
+}
+
+.philosophy-language-switch a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.philosophy-persian,
+.philosophy-persian .page-intro,
+.philosophy-persian .philosophy-contents,
+.philosophy-persian .prose-large {
+  direction: rtl;
+  text-align: right;
+}
+
+.philosophy-persian .page-intro,
+.philosophy-persian .philosophy-contents,
+.philosophy-persian .prose-large,
+.philosophy-persian .prose-large h2,
+.philosophy-persian .philosophy-contents a {
+  font-family: Tahoma, Arial, ui-sans-serif, system-ui, sans-serif;
+}
+
+.philosophy-persian .page-intro h1 {
+  line-height: 1.18;
+}
+
+.philosophy-persian .page-intro > p:last-child,
+.philosophy-persian .prose-large p,
+.philosophy-persian .prose-large li,
+.philosophy-persian .prose-large dd {
+  line-height: 2;
+}
+
+.philosophy-persian .prose-large h2 {
+  line-height: 1.45;
+}
+
+.philosophy-persian .philosophy-contents-label {
+  text-align: right;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+}
+
+.philosophy-persian .philosophy-contents a span {
+  font-family: Tahoma, Arial, ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+.philosophy-persian blockquote {
+  text-align: right;
+  line-height: 2;
+}
+
+.philosophy-glossary {
+  margin: 0;
+  padding: 0;
+}
+
+.philosophy-glossary-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.philosophy-glossary-item:first-child {
+  padding-top: 0;
+}
+
+.philosophy-glossary dt {
+  margin: 0 0 7px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.philosophy-glossary dd {
+  margin: 0;
+}
+
+.philosophy-glossary-en {
+  display: inline-block;
+  margin-right: 8px;
+  color: var(--muted);
+  direction: ltr;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 760px) {
+  .philosophy-language-switch {
+    margin-bottom: 14px;
+  }
+
+  .philosophy-persian .page-intro > p:last-child,
+  .philosophy-persian .prose-large p,
+  .philosophy-persian .prose-large li,
+  .philosophy-persian .prose-large dd {
+    line-height: 1.9;
+  }
+}

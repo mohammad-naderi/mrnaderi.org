@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { SiteFooter, SiteHeader } from "@/components/site";
 
-export const metadata: Metadata = { title: "Philosophy" };
+export const metadata: Metadata = {
+  title: "Philosophy",
+  alternates: {
+    canonical: "/philosophy",
+    languages: { en: "/philosophy", fa: "/philosophy/persian" },
+  },
+};
 
 function EssaySection({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return (
@@ -22,6 +29,9 @@ export default function PhilosophyPage() {
       <SiteHeader />
       <main>
         <section className="page-intro shell">
+          <div className="philosophy-language-switch">
+            <Link href="/philosophy/persian" lang="fa" dir="rtl">فارسی</Link>
+          </div>
           <p className="eyebrow">Philosophy</p>
           <h1>The Theory of Discipline</h1>
           <p>
@@ -94,13 +104,13 @@ export default function PhilosophyPage() {
           <p>The Theory of Discipline emerged from an attempt to understand how truth is possible without appealing to transcendence. If truth is neither correspondence with a reality simply given in advance nor the expression of an eternal realm outside history, then truth has to be produced immanently. But if it is produced entirely from the resources already available within a situation, it becomes difficult to distinguish truth from the extension or reorganization of an existing consistency. The problem is therefore to think a truth that is both <em>immanent</em> to a discipline and <em>irreducible</em> to what that discipline could previously derive from its own resources.</p>
           <p>My account of truth can be summarized through three terms: <em>Idea, Generic, Fidelity</em>.</p>
           <p>The <em>Idea</em> names the orientation of a discipline toward a consistency that does not yet exist as an established object within its interior. It is not a transcendent model standing outside the discipline and waiting to be copied. It is immanent to the process of composition itself: the orientation according to which the discipline proceeds beyond what its present resources can already determine.</p>
-          <p>The <em>Generic</em> names the mode through which such a composition escapes the classifications available within the existing consistency. In set-theoretical forcing, a generic set cannot be captured by the definable subsets of the ground model. More generally, genericity names the way a new composition can evade the predicates through which the existing discipline organizes what it can recognize. This is one reason universality cannot be understood simply as the possession of a general predicate shared by all cases. What is universal in a truth is bound to what escapes established predication.</p>
+          <p>The <em>Generic</em> names the mode through which such a composition escapes the classifications available within the existing consistency. In set-theoretical forcing, a generic set cannot be captured by the definable subsets of the ground model. More generally, genericity names the way a new composition can evade the predicates through which the existing discipline organizes what it can recognize. This is one reason universality cannot be understood simply as the possession of a general predicate shared by all cases. What is universal in the consequences of a truth is bound to what escapes established predication.</p>
           <p><em>Fidelity</em> names the work through which the consequences of an encounter are composed and sustained. A truth does not appear fully formed. It requires a sequence of decisions, constructions, tests and extensions. Fidelity is this labor of composition. It is also the point at which the relation between truth and subjectivity becomes clearest: if the subject is the discipline in composition, fidelity is the active form of that subjectivity.</p>
           <p>These three terms are inseparable. An Idea without genericity risks becoming a projected image of what the discipline already knows how to recognize. Genericity without fidelity remains an encounter without a sustained composition. Fidelity without an Idea lacks the orientation through which its constructions can acquire coherence beyond local problem-solving. Truth requires their conjunction.</p>
           <p>But even this conjunction does not by itself exhaust what I mean by truth. The stronger material condition remains decisive: the impasse through which the composition proceeds must be encountered in the presence of the excess of being over thought. Without this condition, the same disciplinary machinery can produce novelty and even universality without producing an invariant consistency.</p>
           <p>This is where my account both inherits from and departs from Badiou. From Badiou I retain the insistence that truth is produced rather than discovered as a pre-existing object; that it proceeds through a generic construction; that fidelity is constitutive of its existence; and that universality is not reducible to established predicates. But I place these elements within the more general architecture of discipline and distinguish more sharply between the formal possibility of composition and the material condition of truth.</p>
           <p>This distinction matters because it prevents truth from becoming simply another name for successful novelty. A discipline can produce something genuinely new without thereby producing a truth. Novelty concerns the emergence of a consistency not derivable from the discipline’s existing resources. Truth concerns the stronger case in which such a composition is related, through an impasse, to the excess of being over thought and thereby acquires the possibility of invariance.</p>
-          <p>Truth is therefore not an object that a discipline possesses. It is a mode of composition whose consequences can transform the discipline itself. Nor does its universality mean that it becomes detached from the conditions of its emergence. A truth begins locally and historically. Its claim to universality lies in the fact that what is composed through it cannot be reduced to the predicates or classifications of the world from which it began.</p>
+          <p>Truth is therefore not an object that a discipline possesses. It is a mode of composition whose consequences can transform the discipline itself. Nor does the universality of its consequences mean that the truth becomes detached from the conditions of its emergence. A truth begins locally and historically. The claim to universality of its consequences lies in the fact that what is composed through it cannot be reduced to the predicates or classifications of the world from which it began.</p>
           <p>This also clarifies why truth is inseparable from the life of a discipline. Truth exists only through the continuation of its consequences. It is not enough that an encounter take place or that a decision be made. A consistency has to be composed, maintained and extended. In this sense, novelty can be understood as the <em>phenomenology of truth</em>: what appears historically is the emergence and development of a new consistency, while truth names the stronger structure that makes such a novelty capable of exceeding the historical predicates of its origin.</p>
           <p>The relation can therefore be stated compactly: truth is not identical with novelty, but truth becomes historically legible through novelty. We do not ordinarily encounter a “crisis of truth” directly. What we encounter is a crisis of novelty: a world in which the possibility of producing something genuinely new appears increasingly foreclosed. It is through that crisis that the philosophical problem of truth becomes visible.</p>
         </EssaySection>

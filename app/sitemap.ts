@@ -6,6 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/philosophy",
+    "/philosophy/persian",
+    "/philosophy/persian/terms",
     "/writing",
     "/publications",
     "/teaching",
