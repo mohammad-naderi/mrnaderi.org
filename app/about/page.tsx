@@ -70,10 +70,14 @@ export default function AboutPage() {
               During the early 1980s, when opportunities for formal education in
               Iran were severely limited, I also undertook sustained study of
               Islamic philosophy, Persian literature, and mysticism with eminent
-              scholars in these fields. My work focused particularly on Rumi’s
+              scholars and masters in these fields, notably Hossein Elhai Ghomshei. 
+              My association with him continued over several decades, becoming an 
+              important part of my intellectual and personal life and bringing with 
+              it a circle of friendships and conversations that remained part of my 
+              life in Canada. My work focused particularly on Rumi’s
               <em> Masnavi</em>, Shabestari’s <em>Golshan-e Rāz</em>, and Attar’s
               <em> The Conference of the Birds</em>. I later taught the
-              <em> Masnavi</em> and <em>Golshan-e Rāz</em> for ten years.
+              <em> Masnavi</em> for ten years.
             </p>
           </div>
         </section>
