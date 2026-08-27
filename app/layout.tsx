@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   },
   description:
     "The philosophical work, publications, seminars, and current writing of Mohammad Reza Naderi.",
+  applicationName: "Mohammad Reza Naderi",
+  authors: [{ name: "Mohammad Reza Naderi", url: "/about" }],
+  creator: "Mohammad Reza Naderi",
+  publisher: "Mohammad Reza Naderi",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
