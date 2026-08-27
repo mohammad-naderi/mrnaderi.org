@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
+
+export const metadata: Metadata = {
+  description:
+    "Mohammad Reza Naderi on meaning, structure, determination, Deleuze, and the problem of novelty in French structuralism.",
+  alternates: { canonical: "/teaching/meaning-structure-determination" },
+};
 
 export default function SeminarLayout({ children }: { children: ReactNode }) {
   return (
