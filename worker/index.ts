@@ -25,6 +25,21 @@ interface ExecutionContext {
 // dangerouslyAllowSVG: true in next.config.js and uncomment below:
 // const imageConfig: ImageConfig = { dangerouslyAllowSVG: true };
 
+const teachingSeoTitles: Record<string, string> = {
+  "/teaching/adventures-french-structuralism-course-notes":
+    "French Structuralism Course Notes · Mohammad Reza Naderi",
+  "/teaching/dark-enlightenment-collapse-of-transition":
+    "Dark Enlightenment: Transition · Mohammad Reza Naderi",
+  "/teaching/dark-enlightenment-from-acceleration-to-control":
+    "Dark Enlightenment: Control · Mohammad Reza Naderi",
+  "/teaching/meaning-structure-determination":
+    "Structuralism to Deleuze · Mohammad Reza Naderi",
+  "/teaching/reading-deleuze-structuralism":
+    "Deleuze on Structuralism · Mohammad Reza Naderi",
+  "/teaching/unconscious-materialism-hegel":
+    "Hegel’s Unconscious Materialism · Mohammad Reza Naderi",
+};
+
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
@@ -46,16 +61,17 @@ const worker = {
     }
 
     const response = await handler.fetch(request, env, ctx);
+    const seoTitle = teachingSeoTitles[url.pathname];
 
-    // This course page has a deliberately long visible heading. Keep that heading,
-    // but serve a concise HTML title to search-engine crawlers and direct visitors.
-    if (url.pathname === "/teaching/reading-deleuze-structuralism") {
+    // Keep the full scholarly headings on the pages themselves, while serving
+    // concise search titles for every teaching subpage.
+    if (seoTitle) {
       const contentType = response.headers.get("content-type") ?? "";
       if (contentType.includes("text/html")) {
         const html = await response.text();
         const rewritten = html.replace(
           /<title>[\s\S]*?<\/title>/,
-          "<title>Deleuze on Structuralism · Mohammad Reza Naderi</title>",
+          `<title>${seoTitle}</title>`,
         );
         const headers = new Headers(response.headers);
         headers.delete("content-length");
