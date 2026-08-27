@@ -45,7 +45,30 @@ const worker = {
       }, allowedWidths);
     }
 
-    return handler.fetch(request, env, ctx);
+    const response = await handler.fetch(request, env, ctx);
+
+    // This course page has a deliberately long visible heading. Keep that heading,
+    // but serve a concise HTML title to search-engine crawlers and direct visitors.
+    if (url.pathname === "/teaching/reading-deleuze-structuralism") {
+      const contentType = response.headers.get("content-type") ?? "";
+      if (contentType.includes("text/html")) {
+        const html = await response.text();
+        const rewritten = html.replace(
+          /<title>[\s\S]*?<\/title>/,
+          "<title>Deleuze on Structuralism · Mohammad Reza Naderi</title>",
+        );
+        const headers = new Headers(response.headers);
+        headers.delete("content-length");
+        headers.delete("etag");
+        return new Response(rewritten, {
+          status: response.status,
+          statusText: response.statusText,
+          headers,
+        });
+      }
+    }
+
+    return response;
   },
 };
 
