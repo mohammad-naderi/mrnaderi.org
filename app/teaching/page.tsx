@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageIntro, SiteFooter, SiteHeader } from "@/components/site";
 
-export const metadata: Metadata = { title: "Teaching & Talks" };
+export const metadata: Metadata = {
+  title: "Teaching & Talks",
+  description:
+    "Selected courses, seminars, talks, recordings, and written materials by Mohammad Reza Naderi on French philosophy, Hegel, Lacan, Deleuze, Badiou, and Persian mystical thought.",
+  alternates: { canonical: "/teaching" },
+};
 
 type Session = {
   date: string;
