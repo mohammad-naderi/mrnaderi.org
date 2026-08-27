@@ -19,25 +19,42 @@ interface ExecutionContext {
   passThroughOnException(): void;
 }
 
-// Image security config. SVG sources with .svg extension auto-skip the
-// optimization endpoint on the client side (served directly, no proxy).
-// To route SVGs through the optimizer (with security headers), set
-// dangerouslyAllowSVG: true in next.config.js and uncomment below:
-// const imageConfig: ImageConfig = { dangerouslyAllowSVG: true };
+type TeachingSeo = {
+  title: string;
+  description: string;
+};
 
-const teachingSeoTitles: Record<string, string> = {
-  "/teaching/adventures-french-structuralism-course-notes":
-    "French Structuralism Course Notes · Mohammad Reza Naderi",
-  "/teaching/dark-enlightenment-collapse-of-transition":
-    "Dark Enlightenment: Transition · Mohammad Reza Naderi",
-  "/teaching/dark-enlightenment-from-acceleration-to-control":
-    "Dark Enlightenment: Control · Mohammad Reza Naderi",
-  "/teaching/meaning-structure-determination":
-    "Structuralism to Deleuze · Mohammad Reza Naderi",
-  "/teaching/reading-deleuze-structuralism":
-    "Deleuze on Structuralism · Mohammad Reza Naderi",
-  "/teaching/unconscious-materialism-hegel":
-    "Hegel’s Unconscious Materialism · Mohammad Reza Naderi",
+const teachingSeo: Record<string, TeachingSeo> = {
+  "/teaching/adventures-french-structuralism-course-notes": {
+    title: "French Structuralism Notes · Mohammad Reza Naderi",
+    description:
+      "Course notes for Adventures of French Structuralism, covering structure, determination, Deleuze, Lacan, novelty, and contemporary French philosophy.",
+  },
+  "/teaching/dark-enlightenment-collapse-of-transition": {
+    title: "Dark Enlightenment: Transition · Mohammad Reza Naderi",
+    description:
+      "A seminar on accelerationism, political transition, and the collapse of transition in the emergence of Dark Enlightenment.",
+  },
+  "/teaching/dark-enlightenment-from-acceleration-to-control": {
+    title: "Dark Enlightenment: Control · Mohammad Reza Naderi",
+    description:
+      "A seminar on Dark Enlightenment, acceleration, control, and the intellectual routes linking it to currents associated with the left.",
+  },
+  "/teaching/meaning-structure-determination": {
+    title: "Structuralism to Deleuze · Mohammad Reza Naderi",
+    description:
+      "A seminar on structuralism, Deleuze, determination, the Idea, and the philosophical problem of novelty.",
+  },
+  "/teaching/reading-deleuze-structuralism": {
+    title: "Deleuze on Structuralism · Mohammad Reza Naderi",
+    description:
+      "A course companion to Gilles Deleuze’s “How Do We Recognize Structuralism?” for Adventures of French Structuralism.",
+  },
+  "/teaching/unconscious-materialism-hegel": {
+    title: "Hegel’s Unconscious Materialism · Mohammad Reza Naderi",
+    description:
+      "A seminar on Badiou’s reading of Hegel’s Science of Logic, dialectic, multiplicity, and the problem of philosophical beginning.",
+  },
 };
 
 const worker = {
@@ -61,22 +78,33 @@ const worker = {
     }
 
     const response = await handler.fetch(request, env, ctx);
-    const seoTitle = teachingSeoTitles[url.pathname];
+    const seo = teachingSeo[url.pathname];
 
-    // Keep the full scholarly headings on the pages themselves, while serving
-    // concise search titles for every teaching subpage.
-    if (seoTitle) {
+    if (seo) {
       const contentType = response.headers.get("content-type") ?? "";
       if (contentType.includes("text/html")) {
-        const html = await response.text();
-        const rewritten = html.replace(
+        let html = await response.text();
+
+        // Normalize the initial HTML metadata.
+        html = html.replace(
           /<title>[\s\S]*?<\/title>/,
-          `<title>${seoTitle}</title>`,
+          `<title>${seo.title}</title>`,
         );
+        html = html.replace(
+          /<meta(?=[^>]*\bname=["']description["'])[^>]*>/i,
+          `<meta name="description" content="${seo.description}">`,
+        );
+
+        // vinext/Next metadata hydration can restore route-level metadata after the
+        // initial HTML is parsed. Re-apply the concise search metadata after hydration
+        // so crawlers that render JavaScript see the same final values.
+        const seoScript = `<script>(()=>{const t=${JSON.stringify(seo.title)},d=${JSON.stringify(seo.description)};const a=()=>{if(document.title!==t)document.title=t;let m=document.querySelector('meta[name="description"]');if(!m){m=document.createElement('meta');m.setAttribute('name','description');document.head.appendChild(m)}if(m.getAttribute('content')!==d)m.setAttribute('content',d)};a();document.addEventListener('DOMContentLoaded',a,{once:true});setTimeout(a,0);setTimeout(a,500);setTimeout(a,1500)})();</script>`;
+        html = html.replace("</body>", `${seoScript}</body>`);
+
         const headers = new Headers(response.headers);
         headers.delete("content-length");
         headers.delete("etag");
-        return new Response(rewritten, {
+        return new Response(html, {
           status: response.status,
           statusText: response.statusText,
           headers,
