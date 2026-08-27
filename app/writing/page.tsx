@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { PageIntro, SiteFooter, SiteHeader } from "@/components/site";
 
-export const metadata: Metadata = { title: "Writing" };
+export const metadata: Metadata = {
+  title: "Writing",
+  description:
+    "Current philosophical essays and notes by Mohammad Reza Naderi on truth, discipline, radical novelty, politics, poetry, and the present.",
+  alternates: { canonical: "/writing" },
+};
 
 const essays = [
   {
