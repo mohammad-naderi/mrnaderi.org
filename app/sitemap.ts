@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/publications",
     "/teaching",
     "/about",
+    "/about/persian",
     "/teaching/meaning-structure-determination",
     "/teaching/adventures-french-structuralism-course-notes",
     "/teaching/reading-deleuze-structuralism",
