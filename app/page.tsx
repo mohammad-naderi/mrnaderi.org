@@ -1,6 +1,47 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter, SiteHeader } from "@/components/site";
+
+export const metadata: Metadata = {
+  title: { absolute: "Mohammad Reza Naderi — Philosopher and Author" },
+  description:
+    "Mohammad Reza Naderi is a philosopher and author based in Toronto. His work develops the Theory of Discipline through truth, mathematical ontology, subjectivity, and radical novelty.",
+  alternates: { canonical: "/" },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://mrnaderi.org/#website",
+      url: "https://mrnaderi.org/",
+      name: "Mohammad Reza Naderi",
+      description:
+        "The philosophical work, publications, teaching, and current writing of Mohammad Reza Naderi.",
+      inLanguage: "en",
+      publisher: { "@id": "https://mrnaderi.org/#person" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mrnaderi.org/#person",
+      name: "Mohammad Reza Naderi",
+      alternateName: "Reza Naderi",
+      url: "https://mrnaderi.org/about",
+      image: "https://mrnaderi.org/profile-photo-4x5.jpg",
+      jobTitle: ["Philosopher", "Author", "Teacher"],
+      knowsAbout: [
+        "Theory of Discipline",
+        "Alain Badiou",
+        "Mathematical ontology",
+        "Truth",
+        "Subjectivity",
+        "Radical novelty",
+      ],
+    },
+  ],
+};
 
 const notes = [
   {
@@ -42,6 +83,12 @@ const homeBooks = [
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <SiteHeader />
       <main className="home-page">
         <section className="hero shell">
