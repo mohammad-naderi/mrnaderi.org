@@ -37,20 +37,32 @@ const courseNotesHtml = [
   part13,
 ].join("\n");
 
-const toc = [
-  ["outline", "Outline"],
-  ["structuralism-overview-foundations", "Structuralism: Overview and Foundations"],
-  ["structured-linguistics", "Structured Linguistics"],
-  ["structured-anthropology", "Structured Anthropology"],
-  ["structuralism-epistemology-science", "Structuralism, Epistemology and Science"],
-  ["beyond-structure", "Beyond Structure"],
-  ["theory-discipline", "Theory of Discipline"],
-  ["appendix", "Appendix"],
-  ["appendix-form-truth-fidelity", "1. Form, Truth, and Fidelity"],
-  ["appendix-taboo-axiom", "2. From Taboo to Axiom"],
-  ["deleuze-structuralist-condition", "3. Deleuze and Structuralist Condition"],
-  ["hallward-badiou", "4. About French Epistemology — Hallward/Badiou"],
-];
+// The source notes contain one section-4 heading that was flattened during the
+// original document-to-HTML conversion. Restore it before rendering and before
+// building the contents list so the page structure and navigation agree.
+const normalizedCourseNotesHtml = courseNotesHtml.replace(
+  /<ol>\s*<li><p>Beyond Structure: Post-Structuralist<\/p><\/li>\s*<\/ol>\s*<p>Reorientations\s+/,
+  '<h2 id="beyond-structure">4. Beyond Structure: Post-Structuralist Reorientations</h2>\n<p>',
+);
+
+const cleanHeadingText = (value: string) =>
+  value
+    .replace(/<[^>]+>/g, "")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&nbsp;/g, " ")
+    .trim();
+
+const toc = Array.from(
+  normalizedCourseNotesHtml.matchAll(
+    /<h([23])\s+id=["']([^"']+)["'][^>]*>([\s\S]*?)<\/h\1>/g,
+  ),
+).map(([, level, href, label]) => ({
+  level: Number(level),
+  href,
+  label: cleanHeadingText(label),
+}));
 
 export default function StructuralismCourseNotesPage() {
   return (
@@ -75,8 +87,12 @@ export default function StructuralismCourseNotesPage() {
         <section className="seminar-layout shell">
           <nav className="seminar-toc" aria-label="Course notes contents">
             <p>Contents</p>
-            {toc.map(([href, label]) => (
-              <a key={href} href={`#${href}`}>
+            {toc.map(({ level, href, label }) => (
+              <a
+                key={href}
+                href={`#${href}`}
+                style={level === 3 ? { paddingLeft: "14px" } : undefined}
+              >
                 {label}
               </a>
             ))}
@@ -84,7 +100,7 @@ export default function StructuralismCourseNotesPage() {
 
           <article
             className="seminar-prose course-notes-prose"
-            dangerouslySetInnerHTML={{ __html: courseNotesHtml }}
+            dangerouslySetInnerHTML={{ __html: normalizedCourseNotesHtml }}
           />
         </section>
       </main>
