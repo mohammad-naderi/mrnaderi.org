@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Companion to Deleuze’s ‘How Do We Recognize Structuralism?’",
   description:
     "A course companion to Gilles Deleuze’s ‘How Do We Recognize Structuralism?’ for Adventures of French Structuralism.",
+  alternates: { canonical: "/teaching/reading-deleuze-structuralism" },
 };
 
 export default function DeleuzeCompanionLayout({
