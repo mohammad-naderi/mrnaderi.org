@@ -34,3 +34,34 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Notify IndexNow
+        continue-on-error: true
+        run: |
+          curl --fail-with-body --silent --show-error \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data @- <<'JSON'
+          {
+            "host": "mrnaderi.org",
+            "key": "128a5bcaf4a9d4f627d02876597e4e8b",
+            "keyLocation": "https://mrnaderi.org/128a5bcaf4a9d4f627d02876597e4e8b.txt",
+            "urlList": [
+              "https://mrnaderi.org/",
+              "https://mrnaderi.org/philosophy",
+              "https://mrnaderi.org/philosophy/persian",
+              "https://mrnaderi.org/philosophy/persian/terms",
+              "https://mrnaderi.org/writing",
+              "https://mrnaderi.org/publications",
+              "https://mrnaderi.org/teaching",
+              "https://mrnaderi.org/about",
+              "https://mrnaderi.org/about/persian",
+              "https://mrnaderi.org/teaching/meaning-structure-determination",
+              "https://mrnaderi.org/teaching/adventures-french-structuralism-course-notes",
+              "https://mrnaderi.org/teaching/reading-deleuze-structuralism",
+              "https://mrnaderi.org/teaching/unconscious-materialism-hegel",
+              "https://mrnaderi.org/teaching/dark-enlightenment-from-acceleration-to-control",
+              "https://mrnaderi.org/teaching/dark-enlightenment-collapse-of-transition"
+            ]
+          }
+          JSON
