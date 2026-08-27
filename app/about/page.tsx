@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { SiteFooter, SiteHeader } from "@/components/site";
 
-export const metadata: Metadata = { title: "About" };
+export const metadata: Metadata = {
+  title: "About",
+  alternates: {
+    canonical: "/about",
+    languages: { en: "/about", fa: "/about/persian" },
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -22,6 +29,9 @@ export default function AboutPage() {
             />
           </figure>
           <div className="about-prose">
+            <div className="philosophy-language-switch">
+              <Link href="/about/persian">فارسی</Link>
+            </div>
             <h1>Biography</h1>
             <p className="about-lead">
               I am an Iranian-born Canadian philosopher, author, and teacher based
@@ -48,10 +58,10 @@ export default function AboutPage() {
               philosophy’s central category.
             </p>
             <p>
-              My independent philosophical studies have also included sustained
-              engagement with Descartes and Spinoza; Kant, Hegel, and German
-              Idealism; and the dialectical thought of Georg Lukács and Lucien
-              Goldmann.
+              My independent philosophical studies have ranged from Plato and
+              Aristotle to Descartes and Spinoza; Kant, Hegel, Marx, and German
+              Idealism; Nietzsche, Lukács, and Goldmann; and, in contemporary
+              thought, Lacan, Deleuze, and Badiou.
             </p>
             <p>
               These studies developed alongside, rather than after, my education
@@ -70,10 +80,10 @@ export default function AboutPage() {
               During the early 1980s, when opportunities for formal education in
               Iran were severely limited, I also undertook sustained study of
               Islamic philosophy, Persian literature, and mysticism with eminent
-              scholars and masters in these fields, notably Hossein Elhai Ghomshei. 
-              My association with him continued over several decades, becoming an 
-              important part of my intellectual and personal life and bringing with 
-              it a circle of friendships and conversations that remained part of my 
+              scholars and masters in these fields, notably Dr. Hossein Elahi Ghomshei.
+              My association with him continued over several decades, becoming an
+              important part of my intellectual and personal life and bringing with
+              it a circle of friendships and conversations that remained part of my
               life in Canada. My work focused particularly on Rumi’s
               <em> Masnavi</em>, Shabestari’s <em>Golshan-e Rāz</em>, and Attar’s
               <em> The Conference of the Birds</em>. I later taught the
