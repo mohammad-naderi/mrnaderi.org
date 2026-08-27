@@ -57,6 +57,14 @@ const teachingSeo: Record<string, TeachingSeo> = {
   },
 };
 
+function escapeHtmlAttribute(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
@@ -85,20 +93,21 @@ const worker = {
       if (contentType.includes("text/html")) {
         let html = await response.text();
 
-        // Normalize the initial HTML metadata.
+        // Emit exactly one title and one meta description in the initial HTML.
+        // Some nested Next metadata previously produced competing values.
+        html = html.replace(/<title>[\s\S]*?<\/title>/gi, "");
         html = html.replace(
-          /<title>[\s\S]*?<\/title>/,
-          `<title>${seo.title}</title>`,
+          /<meta(?=[^>]*\bname=["']description["'])[^>]*>/gi,
+          "",
         );
         html = html.replace(
-          /<meta(?=[^>]*\bname=["']description["'])[^>]*>/i,
-          `<meta name="description" content="${seo.description}">`,
+          "</head>",
+          `<title>${escapeHtmlAttribute(seo.title)}</title><meta name="description" content="${escapeHtmlAttribute(seo.description)}"></head>`,
         );
 
-        // vinext/Next metadata hydration can restore route-level metadata after the
-        // initial HTML is parsed. Re-apply the concise search metadata after hydration
-        // so crawlers that render JavaScript see the same final values.
-        const seoScript = `<script>(()=>{const t=${JSON.stringify(seo.title)},d=${JSON.stringify(seo.description)};const a=()=>{if(document.title!==t)document.title=t;let m=document.querySelector('meta[name="description"]');if(!m){m=document.createElement('meta');m.setAttribute('name','description');document.head.appendChild(m)}if(m.getAttribute('content')!==d)m.setAttribute('content',d)};a();document.addEventListener('DOMContentLoaded',a,{once:true});setTimeout(a,0);setTimeout(a,500);setTimeout(a,1500)})();</script>`;
+        // Next/vinext can hydrate route metadata after parsing. Keep exactly one
+        // description node and the concise title in the final rendered DOM as well.
+        const seoScript = `<script>(()=>{const t=${JSON.stringify(seo.title)},d=${JSON.stringify(seo.description)};const a=()=>{if(document.title!==t)document.title=t;const ms=Array.from(document.querySelectorAll('meta[name="description"]'));let m=ms.shift();if(!m){m=document.createElement('meta');m.setAttribute('name','description');document.head.appendChild(m)}if(m.getAttribute('content')!==d)m.setAttribute('content',d);ms.forEach(x=>x.remove())};a();document.addEventListener('DOMContentLoaded',a,{once:true});const o=new MutationObserver(a);o.observe(document.head,{childList:true,subtree:true,attributes:true});setTimeout(()=>{a();o.disconnect()},5000)})();</script>`;
         html = html.replace("</body>", `${seoScript}</body>`);
 
         const headers = new Headers(response.headers);
