@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { BookSpine, PageIntro, SiteFooter, SiteHeader } from "@/components/site";
 
-export const metadata: Metadata = { title: "Publications" };
+export const metadata: Metadata = {
+  title: "Publications",
+  description:
+    "Books, articles, and chapters by Mohammad Reza Naderi on Alain Badiou, truth, infinity, subjectivity, formalism, Lacan, and the Theory of Discipline.",
+  alternates: { canonical: "/publications" },
+};
 
 const articles = [
   {
