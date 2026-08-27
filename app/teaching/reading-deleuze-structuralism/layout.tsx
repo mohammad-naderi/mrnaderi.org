@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Companion to Deleuze’s ‘How Do We Recognize Structuralism?’",
+  title: "Deleuze on Structuralism",
   description:
     "A course companion to Gilles Deleuze’s ‘How Do We Recognize Structuralism?’ for Adventures of French Structuralism.",
   alternates: { canonical: "/teaching/reading-deleuze-structuralism" },
@@ -24,7 +24,7 @@ export default function DeleuzeCompanionLayout({
                 const eyebrow = header?.querySelector('.eyebrow');
                 if (heading) heading.textContent = 'Companion to Deleuze’s “How Do We Recognize Structuralism?”';
                 if (eyebrow) eyebrow.textContent = 'Course companion';
-                document.title = 'Companion to Deleuze’s “How Do We Recognize Structuralism?”';
+                document.title = 'Deleuze on Structuralism · Mohammad Reza Naderi';
                 const description = document.querySelector('meta[name="description"]');
                 if (description) {
                   description.setAttribute('content', 'A course companion to Gilles Deleuze’s “How Do We Recognize Structuralism?” for Adventures of French Structuralism.');
