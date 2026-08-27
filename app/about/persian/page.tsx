@@ -5,16 +5,42 @@ import { SiteFooter, SiteHeader } from "@/components/site";
 
 export const metadata: Metadata = {
   title: "درباره من",
-  description: "زندگی‌نامهٔ فارسی محمدرضا نادری.",
+  description:
+    "زندگی‌نامهٔ محمدرضا نادری، فیلسوف، نویسنده و مدرس ایرانی-کانادایی؛ دربارهٔ مسیر فکری، نظریهٔ سامان، بدیو، هستی‌شناسی ریاضی و بداعت اساسی.",
   alternates: {
     canonical: "/about/persian",
     languages: { en: "/about", fa: "/about/persian" },
   },
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://mrnaderi.org/about/persian#profile",
+  url: "https://mrnaderi.org/about/persian",
+  name: "زندگی‌نامهٔ محمدرضا نادری",
+  inLanguage: "fa",
+  isPartOf: { "@id": "https://mrnaderi.org/#website" },
+  mainEntity: {
+    "@type": "Person",
+    "@id": "https://mrnaderi.org/#person",
+    name: "Mohammad Reza Naderi",
+    alternateName: "Reza Naderi",
+    url: "https://mrnaderi.org/about",
+    image: "https://mrnaderi.org/profile-photo-4x5.jpg",
+    jobTitle: ["Philosopher", "Author", "Teacher"],
+  },
+};
+
 export default function PersianAboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <SiteHeader />
       <main className="philosophy-persian" lang="fa" dir="rtl">
         <section className="about-main shell">
