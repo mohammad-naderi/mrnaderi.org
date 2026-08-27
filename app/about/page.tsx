@@ -5,15 +5,55 @@ import { SiteFooter, SiteHeader } from "@/components/site";
 
 export const metadata: Metadata = {
   title: "About",
+  description:
+    "Biography of Mohammad Reza Naderi, an Iranian-born Canadian philosopher, author, and teacher whose work develops the Theory of Discipline in relation to Badiou, mathematical ontology, truth, and radical novelty.",
   alternates: {
     canonical: "/about",
     languages: { en: "/about", fa: "/about/persian" },
   },
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://mrnaderi.org/about#profile",
+  url: "https://mrnaderi.org/about",
+  name: "About Mohammad Reza Naderi",
+  inLanguage: "en",
+  isPartOf: { "@id": "https://mrnaderi.org/#website" },
+  mainEntity: {
+    "@type": "Person",
+    "@id": "https://mrnaderi.org/#person",
+    name: "Mohammad Reza Naderi",
+    alternateName: "Reza Naderi",
+    url: "https://mrnaderi.org/about",
+    image: "https://mrnaderi.org/profile-photo-4x5.jpg",
+    jobTitle: ["Philosopher", "Author", "Teacher"],
+    alumniOf: [
+      { "@type": "EducationalOrganization", name: "European Graduate School" },
+      { "@type": "EducationalOrganization", name: "University of Toronto" },
+    ],
+    knowsAbout: [
+      "Theory of Discipline",
+      "Alain Badiou",
+      "Mathematical ontology",
+      "Truth",
+      "Subjectivity",
+      "Radical novelty",
+      "Continental philosophy",
+    ],
+  },
+};
+
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <SiteHeader />
       <main>
         <section className="about-main shell">
