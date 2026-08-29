@@ -10,6 +10,13 @@ export const metadata: Metadata = {
 
 const essays = [
   {
+    id: "what-is-a-truth",
+    area: "Truth · Theory of Discipline",
+    title: "What Is a Truth?",
+    text: "Working backward from Greek tragedy, this essay asks what a truth is in its being and distinguishes truth from consistency, disciplinary state, consequence, and novelty.",
+    href: "/writing/what-is-a-truth",
+  },
+  {
     id: "rimbaud",
     area: "Poetry · Discipline",
     title: "The Subject Called “Rimbaud”",
