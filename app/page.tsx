@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter, SiteHeader } from "@/components/site";
+import { writings } from "@/data/writing";
 
 export const metadata: Metadata = {
   title: { absolute: "Mohammad Reza Naderi — Philosopher and Author" },
@@ -43,27 +44,7 @@ const structuredData = {
   ],
 };
 
-const notes = [
-  {
-    number: "01",
-    tag: "Poetry · Discipline",
-    title: "The Subject Called “Rimbaud”",
-    text: "Rimbaud names three distinct things: an event in poetry, a poet, and a new consistency in poetic art. Distinguishing them helps clarify why the subject is the discipline in composition rather than the biographical individual.",
-    href: "https://mrnaderi.substack.com/p/the-subject-called-rimbaud",
-  },
-  {
-    number: "02",
-    tag: "The Present · Truth",
-    title: "Why the Crisis of Truth Appears as a Crisis of Novelty",
-    text: "Truth is not encountered directly in everyday life. What first becomes visible is a blockage in the production and recognition of radical novelty; philosophy draws from this the deeper crisis of truth.",
-  },
-  {
-    number: "03",
-    tag: "Politics · Diagnosis",
-    title: "The Present Made Permanent",
-    text: "The recurrent enemy of novelty is naturalization: the transformation of a contingent arrangement into the horizon of the possible. Even thinking that denaturalizes one order can reproduce the same error elsewhere.",
-  },
-];
+const homeWritings = writings.slice(0, 3);
 
 const homeBooks = [
   {
@@ -188,20 +169,20 @@ export default function Home() {
           </div>
 
           <div className="home-writing-list">
-            {notes.map((note) => (
-              <article className="home-writing-entry" key={note.number}>
+            {homeWritings.map((writing, index) => (
+              <article className="home-writing-entry" key={writing.id}>
                 <div className="home-writing-meta">
-                  <span>{note.number}</span>
-                  <p>{note.tag}</p>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <p>{writing.area}</p>
                 </div>
                 <div>
                   <h3>
-                    {note.href ? <a href={note.href}>{note.title}</a> : note.title}
+                    {writing.href ? <a href={writing.href}>{writing.title}</a> : writing.title}
                   </h3>
-                  <p>{note.text}</p>
+                  <p>{writing.text}</p>
                 </div>
-                {note.href ? (
-                  <a className="home-writing-status" href={note.href}>Read ↗</a>
+                {writing.href ? (
+                  <a className="home-writing-status" href={writing.href}>Read ↗</a>
                 ) : (
                   <p className="home-writing-status">In preparation</p>
                 )}
