@@ -12,7 +12,7 @@ export const writings: WritingEntry[] = [
     area: "Badiou · Event · Theory of Discipline",
     title: "Being and Truth, After Event",
     text: "A reflection on what Event does in Being and Event, what its formal schema leaves unexplained, and why the Theory of Discipline can retain rupture without requiring Event.",
-    href: "/writing/being-and-truth-after-event",
+    href: "https://mrnaderi.substack.com/p/being-and-truth-after-event",
   },
   {
     id: "what-is-a-truth",
