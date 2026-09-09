@@ -9,6 +9,7 @@ const routes = [
   "/philosophy/persian/terms",
   "/writing",
   "/writing/what-is-a-truth",
+  "/writing/being-and-truth-after-event",
   "/publications",
   "/teaching",
   "/about",
@@ -24,7 +25,7 @@ const routes = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date("2026-08-29"),
+    lastModified: new Date(route === "/writing/being-and-truth-after-event" ? "2026-09-08" : "2026-08-29"),
     changeFrequency: route.startsWith("/teaching/") ? "monthly" : "weekly",
   }));
 }
