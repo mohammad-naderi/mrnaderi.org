@@ -29,27 +29,9 @@ export const writings: WritingEntry[] = [
     href: "https://mrnaderi.substack.com/p/the-subject-called-rimbaud",
   },
   {
-    id: "crisis-of-novelty",
-    area: "The Present · Truth",
-    title: "Why the crisis of truth appears as a crisis of novelty",
-    text: "Truth is not directly available in everyday experience. What becomes visible is a blockage in the production and recognition of radical novelty—and only philosophy draws from it the deeper crisis of truth.",
-  },
-  {
-    id: "naturalization",
-    area: "Politics · Diagnosis",
-    title: "The present made permanent",
-    text: "The recurrent enemy of novelty is naturalization: the transformation of a contingent arrangement into the horizon of the possible. Even thought that denaturalizes one order can reproduce the same error elsewhere.",
-  },
-  {
-    id: "ethos",
-    area: "Discipline · Subjectivity",
-    title: "The ethos of a discipline",
-    text: "How the orientation of a discipline—covering, regulating, or affirming—shapes its relation to excess, novelty, and truth.",
-  },
-  {
-    id: "phenomenology",
-    area: "Novelty · Philosophy",
-    title: "Novelty as the phenomenology of truth",
-    text: "A compact statement of the route from the diagnosis of the present to the possibility of truth: novelty is how the life of truth becomes philosophically legible.",
+    id: "absoluteness-of-truth",
+    area: "Truth · Absoluteness · Theory of Discipline",
+    title: "The Absoluteness of Truth",
+    text: "The next essay asks what it means for a truth to be independent of a particular count or presentation, and how invariance, compossibility, elementarity, and j bear on that question.",
   },
 ];
