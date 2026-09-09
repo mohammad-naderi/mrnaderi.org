@@ -8,6 +8,13 @@ export type WritingEntry = {
 
 export const writings: WritingEntry[] = [
   {
+    id: "being-and-truth-after-event",
+    area: "Badiou · Event · Theory of Discipline",
+    title: "Being and Truth, After Event",
+    text: "A reflection on what Event does in Being and Event, what its formal schema leaves unexplained, and why the Theory of Discipline can retain rupture without requiring Event.",
+    href: "/writing/being-and-truth-after-event",
+  },
+  {
     id: "what-is-a-truth",
     area: "Truth · Theory of Discipline",
     title: "What Is a Truth?",
