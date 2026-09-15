@@ -14,6 +14,8 @@ type Session = {
   type: string;
   title: string;
   bookTitle?: string;
+  secondTitle?: string;
+  secondBookTitle?: string;
   subtitle?: string;
   series: string;
   note?: string;
@@ -109,7 +111,10 @@ const sessions: Session[] = [
   {
     date: "Ten years",
     type: "Teaching practice",
-    title: "Rumi’s Masnavi and Shabestari’s Golshan-e Rāz",
+    title: "Rumi’s",
+    bookTitle: "Masnavi",
+    secondTitle: "and Shabestari’s",
+    secondBookTitle: "Golshan-e Rāz",
     series: "Persian mystical philosophy and classical poetry",
   },
 ];
@@ -171,6 +176,8 @@ export default function TeachingPage() {
                   <h3>
                     {session.title}
                     {session.bookTitle ? <> <em>{session.bookTitle}</em></> : null}
+                    {session.secondTitle ? <> {session.secondTitle}</> : null}
+                    {session.secondBookTitle ? <> <em>{session.secondBookTitle}</em></> : null}
                   </h3>
                   {session.subtitle ? (
                     <p
