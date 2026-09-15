@@ -88,10 +88,10 @@ export default function PersianAboutPage() {
               فهرست کامل‌تری از کتاب‌ها، مقالات، تدریس‌ها، سخنرانی‌ها، تحصیلات و فعالیت‌های حرفه‌ای پیشین من در رزومهٔ عمومی‌ام در دسترس است.
             </p>
             <div className="about-cv-actions">
-              <a className="text-link" href="/documents/Mohammad-Reza-Naderi-CV.pdf">
-                دریافت نسخهٔ PDF ↗
-              </a>
-              <a className="text-link" href="/documents/Mohammad-Reza-Naderi-CV.docx">
+              <Link className="text-link" href="/cv">
+                مشاهدهٔ PDF →
+              </Link>
+              <a className="text-link" href="/documents/Mohammad-Reza-Naderi-CV.docx" download>
                 دریافت نسخهٔ Word
               </a>
             </div>
