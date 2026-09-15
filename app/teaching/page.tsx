@@ -13,6 +13,7 @@ type Session = {
   date: string;
   type: string;
   title: string;
+  bookTitle?: string;
   subtitle?: string;
   series: string;
   note?: string;
@@ -72,21 +73,24 @@ const sessions: Session[] = [
   {
     date: "2024",
     type: "Reading seminar",
-    title: "Reading Alain Badiou’s The Immanence of Truths",
+    title: "Reading Alain Badiou’s",
+    bookTitle: "The Immanence of Truths",
     series: "Independent study group · Toronto",
     note: "Teaching materials are currently being edited for publication and will be made available here.",
   },
   {
     date: "2023",
     type: "Reading seminar",
-    title: "Reading Kojin Karatani’s The Structure of World History",
+    title: "Reading Kojin Karatani’s",
+    bookTitle: "The Structure of World History",
     series: "Independent study group · Toronto",
     note: "Teaching slides are currently being edited for publication and will be made available here.",
   },
   {
     date: "2022",
     type: "Reading seminar",
-    title: "Reading Kojin Karatani’s Transcritique",
+    title: "Reading Kojin Karatani’s",
+    bookTitle: "Transcritique",
     series: "Independent study group · Toronto",
     note: "Teaching slides are currently being edited for publication and will be made available here.",
   },
@@ -159,12 +163,15 @@ export default function TeachingPage() {
                 session.watchTwoHref;
 
               return (
-                <article key={`${session.date}-${session.title}-${session.subtitle ?? ""}`}>
+                <article key={`${session.date}-${session.title}-${session.bookTitle ?? ""}-${session.subtitle ?? ""}`}>
                   <div>
                     <span>{session.date}</span>
                     <span>{session.type}</span>
                   </div>
-                  <h3>{session.title}</h3>
+                  <h3>
+                    {session.title}
+                    {session.bookTitle ? <> <em>{session.bookTitle}</em></> : null}
+                  </h3>
                   {session.subtitle ? (
                     <p
                       style={{
