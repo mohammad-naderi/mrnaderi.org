@@ -5,7 +5,7 @@ import { PageIntro, SiteFooter, SiteHeader } from "@/components/site";
 export const metadata: Metadata = {
   title: "Teaching & Talks",
   description:
-    "Selected courses, seminars, talks, recordings, and written materials by Mohammad Reza Naderi on French philosophy, Hegel, Lacan, Deleuze, Badiou, and Persian mystical thought.",
+    "Selected courses, seminars, talks, recordings, and written materials by Mohammad Reza Naderi on Karatani, French philosophy, Hegel, Lacan, Deleuze, Badiou, and Persian mystical thought.",
   alternates: { canonical: "/teaching" },
 };
 
@@ -15,6 +15,7 @@ type Session = {
   title: string;
   subtitle?: string;
   series: string;
+  note?: string;
   readHref?: string;
   courseNotesHref?: string;
   companionHref?: string;
@@ -67,6 +68,27 @@ const sessions: Session[] = [
     series: "Toronto Psychoanalytic Society & Institute · Extension Program",
     courseHref:
       "https://torontopsychoanalysis.com/extension-program/course-five-clinical-lacan-painful-loves/",
+  },
+  {
+    date: "2024",
+    type: "Reading seminar",
+    title: "Reading Alain Badiou’s The Immanence of Truths",
+    series: "Independent study group · Toronto",
+    note: "Teaching materials are currently being edited for publication and will be made available here.",
+  },
+  {
+    date: "2023",
+    type: "Reading seminar",
+    title: "Reading Kojin Karatani’s The Structure of World History",
+    series: "Independent study group · Toronto",
+    note: "Teaching slides are currently being edited for publication and will be made available here.",
+  },
+  {
+    date: "2022",
+    type: "Reading seminar",
+    title: "Reading Kojin Karatani’s Transcritique",
+    series: "Independent study group · Toronto",
+    note: "Teaching slides are currently being edited for publication and will be made available here.",
   },
   {
     date: "12 Sep 2019",
@@ -158,6 +180,16 @@ export default function TeachingPage() {
                     </p>
                   ) : null}
                   <p>{session.series}</p>
+                  {session.note ? (
+                    <p
+                      style={{
+                        marginTop: "8px",
+                        fontStyle: "italic",
+                      }}
+                    >
+                      {session.note}
+                    </p>
+                  ) : null}
                   {hasActions ? (
                     <div
                       className="session-actions"
