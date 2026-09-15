@@ -140,10 +140,10 @@ export default function AboutPage() {
               education, and earlier professional work is available here.
             </p>
             <div className="about-cv-actions">
-              <a className="text-link" href="/documents/Mohammad-Reza-Naderi-CV.pdf">
-                Download PDF ↗
-              </a>
-              <a className="text-link" href="/documents/Mohammad-Reza-Naderi-CV.docx">
+              <Link className="text-link" href="/cv">
+                View PDF →
+              </Link>
+              <a className="text-link" href="/documents/Mohammad-Reza-Naderi-CV.docx" download>
                 Download Word version
               </a>
             </div>
