@@ -91,8 +91,8 @@ export default function AboutPage() {
               consequences of Badiou’s work.
             </p>
             <p>
-              I am a member of the research collective Subset of Theoretical
-              Practice and teach contemporary French philosophy at the Toronto
+              I am a member of the research collective Common Space for Theoretical
+              Practice (CSTP) and teach contemporary French philosophy at the Toronto
               Psychoanalytic Society &amp; Institute. My current work develops the
               Theory of Discipline and a third book that takes radical novelty as
               philosophy’s central category.
