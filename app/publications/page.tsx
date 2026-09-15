@@ -33,8 +33,8 @@ const articles = [
   {
     year: "2021",
     title: "Atlas of Experimental Politics",
-    venue: "Subset of Theoretical Practice · ŠUM #17: Meta-Futures",
-    note: "Collective work on political experimentation, including the section ‘The Discipline of Politics.’",
+    venue: "Common Space for Theoretical Practice (CSTP) · ŠUM #17: Meta-Futures",
+    note: "Collective work, published under the collective’s former name, Subset of Theoretical Practice, including the section ‘The Discipline of Politics.’",
     href: "https://www.sum.si/journal-articles/atlas-of-experimental-politics",
   },
   {
@@ -118,7 +118,7 @@ export default function PublicationsPage() {
               tone="red"
               status="GLAC Edições · 2026 · Co-author"
               title="Atlas de Política Experimental"
-              description="A substantially revised and expanded Portuguese-language edition of Atlas of Experimental Politics, collectively written by the Subconjunto de Prática Teórica. My contribution, ‘The Discipline of Politics,’ was rewritten for this volume."
+              description="A substantially revised and expanded Portuguese-language edition of Atlas of Experimental Politics, collectively written by the Common Space for Theoretical Practice (CSTP), formerly Subconjunto de Prática Teórica. My contribution, ‘The Discipline of Politics,’ was rewritten for this volume."
               href="https://www.glacedicoes.com/product-page/atlas-de-politica-experimental-subconjunto-de-pratica-teorica"
               coverSrc="/atlas-de-politica-experimental.jpg"
             />
