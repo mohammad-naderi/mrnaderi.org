@@ -8,6 +8,13 @@ export type WritingEntry = {
 
 export const writings: WritingEntry[] = [
   {
+    id: "when-physics-got-more-than-it-bargained-for",
+    area: "Physics · Truth · Theory of Discipline",
+    title: "When Physics Got More Than It Bargained For: The Blackbody Problem and Disciplinary Truth",
+    text: "Using Planck’s blackbody problem, this essay follows presentation, capture, non-closure, excess, registration, composition, truth, and representation to ask how a discipline can produce consequences that exceed the problem it set out to solve.",
+    href: "https://mrnaderi.substack.com/p/when-physics-got-more-than-it-bargained",
+  },
+  {
     id: "being-and-truth-after-event",
     area: "Badiou · Event · Theory of Discipline",
     title: "Being and Truth, After Event",
