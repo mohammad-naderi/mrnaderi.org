@@ -59,6 +59,10 @@ const homeBooks = [
     title: "Atlas de Política Experimental",
     coverSrc: "/atlas-de-politica-experimental.jpg",
   },
+  {
+    title: "Badiou and Disciplinary Truths",
+    coverSrc: "https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_568,c_scale,dpr_1.5/jackets/9781350555440.jpg",
+  },
 ];
 
 export default function Home() {
@@ -144,16 +148,6 @@ export default function Home() {
                 <img src={book.coverSrc} alt={book.title} loading="lazy" />
               </Link>
             ))}
-            <Link
-              className="home-book-cover-link"
-              href="/publications"
-              aria-label="Badiou and Disciplinary Truths — view publications"
-            >
-              <div className="home-book-placeholder" aria-hidden="true">
-                <span>Mohammad Reza Naderi</span>
-                <strong>Badiou and Disciplinary Truths</strong>
-              </div>
-            </Link>
           </div>
         </section>
 
