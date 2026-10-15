@@ -128,6 +128,7 @@ export default function PublicationsPage() {
               title="Badiou and Disciplinary Truths"
               description="A companion to The Immanence of Truths and a systematic presentation of the Theory of Discipline."
               href="https://www.bloomsbury.com/us/badiou-and-disciplinary-truths-9781350555440/"
+              coverSrc="https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_568,c_scale,dpr_1.5/jackets/9781350555440.jpg"
             />
           </div>
         </section>
