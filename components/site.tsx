@@ -148,6 +148,8 @@ export function SiteFooter() {
         </div>
         <p className="footer-note">
           <a href="mailto:contact@mrnaderi.org">contact@mrnaderi.org</a>
+          <br />
+          <a href="https://www.linkedin.com/in/mohammad-reza-naderi-phd-04097719/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </p>
       </div>
     </footer>
