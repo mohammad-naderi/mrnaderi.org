@@ -108,7 +108,8 @@ export default function AboutPage() {
               and career in mathematics and computation. I completed a BSc
               in Computer Science and Pure Mathematics at the University of
               Toronto in 1994 and spent decades as a software architect,
-              entrepreneur, and advisor. Through FARA Logics Inc., I led
+              entrepreneur, and advisor. Through{" "}
+              <a href="https://faralogics.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">FARA Logics Inc.</a>, I led
               long-term technology and architecture work across Canadian and
               American institutions. The practical demands of building systems
               and sustaining collective work remain internal to my philosophical
