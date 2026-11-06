@@ -36,9 +36,10 @@ export const writings: WritingEntry[] = [
     href: "https://mrnaderi.substack.com/p/the-subject-called-rimbaud",
   },
   {
-    id: "absoluteness-of-truth",
-    area: "Truth · Absoluteness · Theory of Discipline",
-    title: "The Absoluteness of Truth",
-    text: "The next essay asks what it means for a truth to be independent of a particular count or presentation, and how invariance, compossibility, elementarity, and j bear on that question.",
+    id: "absolute-and-possibility-of-truth",
+    area: "Truth · Absolute · Theory of Discipline",
+    title: "The Absolute and the Possibility of Truth",
+    text: "On the ontological possibility of intelligibility beyond established representation, and how maximality, mathematical reflection, and disciplinary composition make the pursuit of truth thinkable.",
+    href: "https://mrnaderi.substack.com/p/the-absolute-and-the-possibility",
   },
 ];
