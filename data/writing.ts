@@ -8,6 +8,13 @@ export type WritingEntry = {
 
 export const writings: WritingEntry[] = [
   {
+    id: "absolute-and-possibility-of-truth",
+    area: "Truth · Absolute · Theory of Discipline",
+    title: "The Absolute and the Possibility of Truth",
+    text: "On the ontological possibility of intelligibility beyond established representation, and how maximality, mathematical reflection, and disciplinary composition make the pursuit of truth thinkable.",
+    href: "https://mrnaderi.substack.com/p/the-absolute-and-the-possibility",
+  },
+  {
     id: "when-physics-got-more-than-it-bargained-for",
     area: "Physics · Truth · Theory of Discipline",
     title: "When Physics Got More Than It Bargained For: The Blackbody Problem and Disciplinary Truth",
@@ -34,12 +41,5 @@ export const writings: WritingEntry[] = [
     title: "The Subject Called “Rimbaud”",
     text: "Rimbaud names at least three distinct things: an event in poetry, a poet, and a new consistency in poetic art. Distinguishing them makes it possible to see why the biographical individual is not identical with the subject of the discipline.",
     href: "https://mrnaderi.substack.com/p/the-subject-called-rimbaud",
-  },
-  {
-    id: "absolute-and-possibility-of-truth",
-    area: "Truth · Absolute · Theory of Discipline",
-    title: "The Absolute and the Possibility of Truth",
-    text: "On the ontological possibility of intelligibility beyond established representation, and how maximality, mathematical reflection, and disciplinary composition make the pursuit of truth thinkable.",
-    href: "https://mrnaderi.substack.com/p/the-absolute-and-the-possibility",
   },
 ];
